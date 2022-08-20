@@ -2,10 +2,7 @@ import express from 'express'
 import connectDB from './config/db.js'
 import dotenv  from 'dotenv'
 import colors from 'colors'
-// import messageRoute from './routes/messageRoute.js'
 import authRoute from './routes/authRoute.js'
-// import uploadRoute from './routes/uploadRoute.js'
-// import transactionRoute from './routes/transactionRoute.js'
 import { errorHandler, notFound } from './middleware/errorMiddleware.js'
 import cors from 'cors'
 import path from 'path'
@@ -23,20 +20,26 @@ app.use(express.json())
 app.use(cors())
 
 
-app.get('/', (req, res) => {
-  res.send('API is runing...')
-})
+
 
 app.use('/api/v1', authRoute)
-// app.use('/api/v1', messageRoute)
-// app.use('/api/v1/transactions', transactionRoute)
-// app.use('/api/v1/register', uploadRoute)
+
+
+
 
 
 const __dirname = path.resolve()
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
+if(process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '/frontend/build')))
 
+  app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html')))
+} else {
+  app.get('/', (req, res) => {
+    res.send('API is runing...')
+  })
+}
 
 app.use(notFound)
 
