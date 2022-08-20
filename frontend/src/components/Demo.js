@@ -44,20 +44,6 @@ export const Demo = ({image, setImage, user, setImagePath}) => {
         const image = await loadCropImage(cropData)
 
         localStorage.setItem("image", image)
-
-        // const file = dataUrlToFile(cropData,  "image")
-
-        // const formData = new FormData();
-
-        // formData.append("image", file)
-
-        // const data  = await axios.post(`${API_URL}/upload`, formData, config)
-
-        // setImagePath(data.data)
-
-        // console.log(data)
-
-      //   setImage({ preview: URL.createObjectURL(e.target.files[0]), raw: data })
       } catch (error) {
         console.error(error)
       }
