@@ -25,8 +25,6 @@ const Home = () => {
     })
 
     const dataUsers = await res.json()
-
-    console.log(dataUsers &&  dataUsers)
     setUserData(dataUsers && dataUsers)
   }
 

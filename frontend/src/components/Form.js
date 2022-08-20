@@ -67,24 +67,24 @@ const Form = ({id, data}) => {
     const { firstname, lastname, email, state, terms, phone } = data
 
     localStorage.setItem("name", `${firstname}`)
-    
-    const imageRaw = image
 
-    const res = await fetch(`${API_URL}/users/${id}/signup`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({firstname, lastname, email, state, terms, phone, image: null }),
-    })
-
-    if(res.ok) {
-      const resData = await res.json()
-      navigate(`/pages/preview/${resData._id}`)
-    }    
+    try {
+      const res = await fetch(`${API_URL}/users/${id}/signup`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({firstname, lastname, email, state, terms, phone}),
+      })
+  
+      if(res.ok) {
+        const resData = await res.json()
+        navigate(`/pages/preview/${resData._id}`)
+      } 
+    } catch(error){
+      console.log(error)
+    }  
   }
-
-  //console.log(image)
 
 
   return (

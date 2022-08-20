@@ -12,8 +12,6 @@ const Signup = () => {
   const [data, setData] = useState()
   const params = useParams();
 
-  // console.log(params.id)
-
   useEffect(() => {
     setLoading(true)
     setTimeout(() => {
@@ -24,13 +22,18 @@ const Signup = () => {
   }, [])
 
   const fetchUser = async () => {
-    const res = await fetch(`${API_URL}/users/${params.id}`, {
-      method: 'GET'
-    })
-
-    const dataUsers = await res.json()
-
-    setData(dataUsers && dataUsers)
+    try {
+      const res = await fetch(`${API_URL}/users/${params.id}`, {
+        method: 'GET'
+      })
+  
+      const dataUsers = await res.json()
+  
+      setData(dataUsers && dataUsers)
+    } catch (error) {
+      console.log(error)
+    }
+    
   }
 
   if(loading) return <Loader title="Breaking Kola..." />
