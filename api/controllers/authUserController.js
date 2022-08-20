@@ -12,6 +12,8 @@ const registerHero = asyncHandler(async (req, res) => {
 
   const hero = await Hero.create(req.body)
 
+  console.log(hero)
+
   if (hero) {
     res.status(201).json({
       name: hero.name,

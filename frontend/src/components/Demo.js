@@ -32,36 +32,9 @@ export const Demo = ({image, setImage, user, setImagePath}) => {
   //console.log(cropData)
 
   const uploadImage = async (cropData) => {
+      const image = await loadCropImage(cropData)
 
-      try {
-    
-        const config = {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
-        }
-
-        const image = await loadCropImage(cropData)
-
-        localStorage.setItem("image", image)
-
-        // const file = dataUrlToFile(cropData,  "image")
-
-        // const formData = new FormData();
-
-        // formData.append("image", file)
-
-        // const data  = await axios.post(`${API_URL}/upload`, formData, config)
-
-        // setImagePath(data.data)
-
-        // console.log(data)
-
-      //   setImage({ preview: URL.createObjectURL(e.target.files[0]), raw: data })
-      } catch (error) {
-        console.error(error)
-      }
-
+      localStorage.setItem("image", image)
   }
   
   const handleChange = async (e) => {

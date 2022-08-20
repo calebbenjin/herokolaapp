@@ -32,10 +32,7 @@ const Preview = () => {
   )
   
   f.load().then(function (font) {
-    // Ready to use the font in a canvas context
     const canvas = document.getElementById('canvas')
-
-    // const Pangolin = font.family
 
     document.fonts.add(font)
 
@@ -88,21 +85,27 @@ const Preview = () => {
   }
 
   const fetchUser = async () => {
-    const res = await fetch(`${API_URL}/users/${params.id}`, {
-      method: 'GET',
-    })
+    try {
+      const res = await fetch(`${API_URL}/users/${params.id}`, {
+        method: 'GET',
+      })
 
-    const dataUsers = await res.json()
-    setUserData(dataUsers && dataUsers)
+      const dataUsers = await res.json()
+      setUserData(dataUsers && dataUsers)
 
-    dataUsers?.users?.map((data, i, row) => {
-      if (i + 1 === row.length) {
-        setLastuserData(data && data)
-      } else {
-        // Not last one.
-      }
-    })
+      dataUsers?.users?.map((data, i, row) => {
+        if (i + 1 === row.length) {
+          setLastuserData(data && data)
+        } else {
+          // Not last one.
+        }
+      })
+    } catch (error) {
+      console.log(error)
+    }
   }
+
+  console.log(userData)
 
   return (
     <React.Fragment>
