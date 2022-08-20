@@ -29,25 +29,10 @@ export const Demo = ({image, setImage, user, setImagePath}) => {
     })
   }
 
-  //console.log(cropData)
 
   const uploadImage = async (cropData) => {
-
-      try {
-    
-        const config = {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
-        }
-
-        const image = await loadCropImage(cropData)
-
-        localStorage.setItem("image", image)
-      } catch (error) {
-        console.error(error)
-      }
-
+      const image = await loadCropImage(cropData)
+      localStorage.setItem("image", image)
   }
   
   const handleChange = async (e) => {

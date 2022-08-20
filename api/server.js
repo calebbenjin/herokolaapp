@@ -31,6 +31,7 @@ app.use('/api/v1', authRoute)
 const __dirname = path.resolve()
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
+
 if(process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '/frontend/build')))
 
@@ -40,6 +41,10 @@ if(process.env.NODE_ENV === 'production') {
     res.send('API is runing...')
   })
 }
+
+app.get('/', (req, res) => {
+  res.send('API is runing...')
+})
 
 app.use(notFound)
 
