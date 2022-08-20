@@ -1,0 +1,47 @@
+{
+  "name": "heroapp",
+  "version": "1.0.0",
+  "description": "HeroApp",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node api/server",
+    "server": "nodemon api/server",
+    "client": "yarn start --prefix frontend",
+    "dev": "concurrently \"yarn server\" \"yarn start client\"",
+    "data:import": "node api/seeder",
+    "data:destroy": "node api/seeder -d",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false, yarn add --prefix frontend && yarn build --prefix frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calebbenjin/herokolaapp.git"
+  },
+  "author": "Calebbenjin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/calebbenjin/herokolaapp/issues"
+  },
+  "homepage": "https://github.com/calebbenjin/herokolaapp#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "data-uri-to-file": "^0.1.8",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-async-handler": "^1.2.0",
+    "gridfs-stream": "^1.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.7",
+    "multer": "^1.4.5-lts.1",
+    "multer-gridfs-storage": "^5.0.2",
+    "react-hook-form": "^7.34.0",
+    "react-router-dom": "6"
+  },
+  "devDependencies": {
+    "canvas-confetti": "^1.5.1",
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15"
+  }
+}
