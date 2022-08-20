@@ -29,11 +29,9 @@ export const Demo = ({image, setImage, user, setImagePath}) => {
     })
   }
 
-  //console.log(cropData)
 
   const uploadImage = async (cropData) => {
       const image = await loadCropImage(cropData)
-
       localStorage.setItem("image", image)
   }
   
