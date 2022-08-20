@@ -7,11 +7,11 @@
   "scripts": {
     "start": "node api/server",
     "server": "nodemon api/server",
-    "client": "yarn start --prefix frontend",
-    "dev": "concurrently \"yarn server\" \"yarn start client\"",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node api/seeder",
     "data:destroy": "node api/seeder -d",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false, yarn add --prefix frontend && yarn build --prefix frontend"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "repository": {
     "type": "git",
