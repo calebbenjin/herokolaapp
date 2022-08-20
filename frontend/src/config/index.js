@@ -1,5 +1,5 @@
-const API_URL = 'http://localhost:5000/api/v1'
-const IMG_URL = 'http://localhost:5000'
+const API_URL = 'http://localhost:5000/api/v1' || 'https://herokolaconnect.herokuapp.com/api/v1'
+const IMG_URL = 'http://localhost:5000' || 'https://herokolaconnect.herokuapp.com'
 
 
 
