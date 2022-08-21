@@ -13,13 +13,7 @@ connectDB()
 const importData = async () => {
   try {
     await HeroModel.deleteMany()
-    // await UserModel.deleteMany()
     await HeroModel.insertMany(users)
-    // const createUsers = await HeroModel.insertMany(users)
-
-    // const adminUser = createUsers[0]._id
-
-
 
     console.log("Data imported:".green.inverse)
     process.exit()
@@ -34,6 +28,7 @@ const importData = async () => {
 const destroyData = async () => {
   try {
     await HeroModel.deleteMany()
+    await UserModel.deleteMany()
 
 
     console.log("Data Destroy:".red.inverse)

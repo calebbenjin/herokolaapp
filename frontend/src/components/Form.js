@@ -88,7 +88,7 @@ const Form = ({id, data}) => {
 
 
   return (
-    <div className='formContainer'>
+    <div className='formContainer signup-form'>
       <Demo image={image} setImage={setImage} setImagePath={setImagePath} user={data} />
       {/* <small className="upload">Upload your photo</small> */}
       <form onSubmit={handleSubmit(handleUpload)}>
