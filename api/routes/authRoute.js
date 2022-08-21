@@ -55,8 +55,7 @@ router.post('/upload', cors(), upload.single('image'), asyncHandler(async (req, 
 
 router.route('/users',).get( cors(), getUsers)
 router.route('/users/:id').get(cors(), getUsersById)
-router.post('/register', registerHero)
-// router.post('/login', loginUser)
+router.post('/register', cors(), registerHero)
 router.post('/users/:id/signup', cors(), createUser)
 
 
