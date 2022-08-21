@@ -59,8 +59,8 @@ const Preview = () => {
 
   useEffect(() => {
     if (userData) {
-      toDataUrl(`${IMG_URL}${userData?.previmage}`, setHeroImage)
-      toDataUrl(`${IMG_URL}${userData?.bgimage}`, setBgImage)
+      toDataUrl(`${userData?.previmage}`, setHeroImage)
+      toDataUrl(`${userData?.bgimage}`, setBgImage)
     }
   }, [userData])
 
@@ -97,7 +97,6 @@ const Preview = () => {
         if (i + 1 === row.length) {
           setLastuserData(data && data)
         } else {
-          // Not last one.
         }
       })
     } catch (error) {

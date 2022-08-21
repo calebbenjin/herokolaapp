@@ -8,6 +8,9 @@ import Header from './Header'
 import Bottle from './Bottle'
 
 const Hero = ({ data }) => {
+
+  console.log(data)
+
   return (
     <div className='heroConrainer'>
       <Header text='Pick your Hero' />
@@ -19,7 +22,7 @@ const Hero = ({ data }) => {
               <Link to={`/pages/signup/${user && user?._id}`} key={user._id}>
                 <div className='headimg-box' key={user?.id}>
                   <img
-                    src={user && `${IMG_URL}${user?.image}`}
+                    src={user && `${user?.image}`}
                     alt='Logo'
                     className='headimg'
                   />
