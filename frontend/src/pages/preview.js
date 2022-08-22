@@ -58,9 +58,7 @@ const Preview = () => {
   }, [])
 
   useEffect(() => {
-    setLoading(true)
     if (userData) {
-      setLoading(false)
       toDataUrl(`${userData?.previmage}`, setHeroImage)
       toDataUrl(`${userData?.bgimage}`, setBgImage)
     }
@@ -150,7 +148,7 @@ const Preview = () => {
             width: '100%',
           }}
         >
-          <Loader title='Breaking Kola...' />{' '}
+          <Loader title='Breaking Kola...' />
         </div>
       )}
     </React.Fragment>

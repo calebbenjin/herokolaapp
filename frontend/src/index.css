@@ -278,6 +278,10 @@ img {
   width: 50%;
 } 
 
+.imageContainer a {
+  text-decoration: none;
+}
+
 .daaluimgContainer{
   display: flex;
   align-items: center;
@@ -310,6 +314,7 @@ img {
   padding: 3px 10px;
   color: #fff;
   font-size: 0.9rem;
+  
 }
 
 .headimg {
@@ -1271,7 +1276,6 @@ form {
 @media only screen and (max-width: 425px) {
   .bottleContainer {
     position: fixed;
-    top: 26rem;
     right: 0rem;
     bottom: 0rem;
     display: flex;
@@ -1297,3 +1301,33 @@ form {
     }
   }
 }
+
+
+/* @media (min-width:320px)  {
+  .bottleContainer {
+    position: fixed;
+    right: 0rem;
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    z-index: 0;
+  }
+
+  .home-bottle{
+    animation: MoveUpDown 2s linear infinite;
+    width: 25%;
+    margin-bottom: -8rem;
+  }
+
+  @keyframes MoveUpDown {
+    0%, 100% {
+      margin-bottom: 0rem;
+    }
+    50% {
+      margin-bottom: -1rem;
+    }
+  }
+} */
