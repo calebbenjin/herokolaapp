@@ -66,7 +66,7 @@ const Form = ({id, data}) => {
     
     const { firstname, lastname, email, state, terms, phone } = data
 
-    localStorage.setItem("name", `${firstname}`)
+    sessionStorage.setItem("name", `${firstname}`)
 
     try {
       const res = await fetch(`${API_URL}/users/${id}/signup`, {

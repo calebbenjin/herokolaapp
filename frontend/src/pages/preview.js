@@ -38,7 +38,7 @@ const Preview = () => {
 
     const ctx = canvas.getContext('2d')
 
-    let name = localStorage.getItem('name')
+    let name = sessionStorage.getItem('name')
 
     const width = canvas.width
 
@@ -152,19 +152,6 @@ const Preview = () => {
         </div>
       )}
 
-
-
-      <div>
-
-        <h1>Possible Errors</h1>
-
-        <p>Height: {height}</p>
-
-        <p>Width: {width}</p>
-
-        <p>Image: {localStorage.getItem("image")}</p>
-
-      </div>
 
 
     </React.Fragment>

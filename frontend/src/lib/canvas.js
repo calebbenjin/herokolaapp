@@ -6,9 +6,9 @@ export const drawOnCanvas =  async (bgImage, heroImage) => {
 
     const ctx = canvas.getContext("2d");
 
-    const userImage = localStorage.getItem('image')
+    const userImage = sessionStorage.getItem('image')
 
-    // const name = localStorage.getItem('name')
+    // const name = sessionStorage.getItem('name')
     
     const image = await getImage(userImage)
 
