@@ -129,11 +129,7 @@ export const Demo = ({image, setImage, user, setImagePath}) => {
       </label>
         </div>
 
-        <div>
-          <h1>ERROR</h1>
-          <p>Image: {image} </p>
-          <p>Image Session: {sessionStorage.getItem("image")} </p>
-        </div>
+ 
     </>
   )
 }

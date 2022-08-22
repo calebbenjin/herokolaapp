@@ -165,6 +165,15 @@ const Form = ({id, data}) => {
 
 
       </canvas>
+
+
+      <div>
+          <h1>ERROR</h1>
+          <p>Image: </p>
+          <p>  {image ? "Yes" : "No"} </p>
+          <p>Image Session: </p>
+          <p>{sessionStorage.getItem("image")  ? "Yes" : "No"} </p>
+        </div>
       
     </div>
   )
