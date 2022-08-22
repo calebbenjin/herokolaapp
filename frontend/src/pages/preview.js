@@ -22,10 +22,6 @@ const Preview = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    // WebSettings.setDomStorageEnabled(true)
-
-    // WebSettings settings = webView.getSettings();
-    // settings.setDomStorageEnabled(true);
     setLoading(true)
     fetchUser()
   }, [])
@@ -62,7 +58,9 @@ const Preview = () => {
   }, [])
 
   useEffect(() => {
+    setLoading(true)
     if (userData) {
+      setLoading(false)
       toDataUrl(`${userData?.previmage}`, setHeroImage)
       toDataUrl(`${userData?.bgimage}`, setBgImage)
     }
