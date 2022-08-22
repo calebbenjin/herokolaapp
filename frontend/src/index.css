@@ -810,7 +810,7 @@ form {
   width: 150px;
 }
 
-@media(max-width: 800px) {
+@media(max-width: 801px) {
   /* .mobile-screen {
     background-image: url('../src/images/background.png');
     background-position: left;
@@ -1273,9 +1273,13 @@ form {
   }
 }
 
-@media only screen and (max-width: 425px) {
+
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 667px) {
   .bottleContainer {
     position: fixed;
+    top: 27rem;
     right: 0rem;
     bottom: 0rem;
     display: flex;
@@ -1284,6 +1288,7 @@ form {
     width: 100%;
     height: 200px;
     z-index: 0;
+    background: transparent;
   }
 
   .home-bottle{
@@ -1302,18 +1307,19 @@ form {
   }
 }
 
-
-/* @media (min-width:320px)  {
+@media only screen and (min-device-width : 411px) and (max-device-width : 800px) {
   .bottleContainer {
     position: fixed;
+    top: 31rem;
     right: 0rem;
-    bottom: 0;
+    bottom: 0rem;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     width: 100%;
     height: 200px;
     z-index: 0;
+    background: transparent;
   }
 
   .home-bottle{
@@ -1330,4 +1336,35 @@ form {
       margin-bottom: -1rem;
     }
   }
-} */
+}
+
+@media only screen and (min-device-width : 300px) and (max-device-width : 400px) {
+  .bottleContainer {
+    position: fixed;
+    top: 35rem;
+    right: 0rem;
+    bottom: 0rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    z-index: 0;
+    background: transparent;
+  }
+
+  .home-bottle{
+    animation: MoveUpDown 2s linear infinite;
+    width: 25%;
+    margin-bottom: -8rem;
+  }
+
+  @keyframes MoveUpDown {
+    0%, 100% {
+      margin-bottom: 0rem;
+    }
+    50% {
+      margin-bottom: -1rem;
+    }
+  }
+}
