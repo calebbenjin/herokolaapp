@@ -151,6 +151,22 @@ const Preview = () => {
           <Loader title='Breaking Kola...' />
         </div>
       )}
+
+
+
+      <div>
+
+        <h1>Possible Errors</h1>
+
+        <p>Height: {height}</p>
+
+        <p>Width: {width}</p>
+
+        <p>Image: {localStorage.getItem("image")}</p>
+
+      </div>
+
+
     </React.Fragment>
   )
 }
