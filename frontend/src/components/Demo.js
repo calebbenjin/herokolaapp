@@ -32,7 +32,9 @@ export const Demo = ({image, setImage, user, setImagePath}) => {
 
   const uploadImage = async (cropData) => {
       const image = await loadCropImage(cropData)
-      localStorage.setItem("image", image)
+      console.log("Image", image)
+      localStorage.setItem("image", cropData)
+      console.log("Crop Data", cropData)
   }
   
   const handleChange = async (e) => {
