@@ -34,6 +34,8 @@ export const Demo = ({image, setImage, user, setImagePath}) => {
     const image = await loadCropImage(cropData)
     sessionStorage.setItem("image", image)
 
+    alert(image)
+
     setImage(image)
   }
   

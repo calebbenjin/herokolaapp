@@ -170,9 +170,9 @@ const Form = ({id, data}) => {
       <div>
           <h1>ERROR</h1>
           <p>Image: </p>
-          <p>  {image ? "Yes" : "No"} </p>
+          <p>  {image?.slice(0, 30) } </p>
           <p>Image Session: </p>
-          <p>{sessionStorage.getItem("image")  ? "Yes" : "No"} </p>
+          <p>  {sessionStorage.getItem("image")?.slice(0, 30)} </p>
         </div>
       
     </div>
