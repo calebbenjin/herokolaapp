@@ -79,7 +79,7 @@ const Form = ({id, data}) => {
   
       if(res.ok) {
         const resData = await res.json()
-        navigate(`/pages/preview/${resData._id}`)
+        // navigate(`/pages/preview/${resData._id}`)
       } 
     } catch(error){
       console.log(error)
