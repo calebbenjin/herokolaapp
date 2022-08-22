@@ -31,10 +31,10 @@ export const Demo = ({image, setImage, user, setImagePath}) => {
 
 
   const uploadImage = async (cropData) => {
-      const image = await loadCropImage(cropData)
-      sessionStorage.setItem("image", image)
+    const image = await loadCropImage(cropData)
+    sessionStorage.setItem("image", image)
 
-      setImage(image)
+    setImage(image)
   }
   
   const handleChange = async (e) => {
@@ -127,6 +127,12 @@ export const Demo = ({image, setImage, user, setImagePath}) => {
           </div>}
           
       </label>
+        </div>
+
+        <div>
+          <h1>ERROR</h1>
+          <p>Image: {image} </p>
+          <p>Image Session: {sessionStorage.getItem("image")} </p>
         </div>
     </>
   )
