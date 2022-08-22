@@ -166,15 +166,6 @@ const Form = ({id, data}) => {
 
       </canvas>
 
-
-      <div>
-          <h1>ERROR</h1>
-          <p>Image: </p>
-          <p>  {image?.slice(0, 30) } </p>
-          <p>Image Session: </p>
-          <p>  {sessionStorage.getItem("image")?.slice(0, 30)} </p>
-        </div>
-      
     </div>
   )
 }
