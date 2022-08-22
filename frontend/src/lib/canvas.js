@@ -41,9 +41,9 @@ export const drawOnCanvas =  async (bgImage, heroImage) => {
 
 
 
-export const getImage = (image) => {
+export const getImage = async(image) => {
     const img = new Image();
-    img.src = image;
+    img.src = await image;
     return img
 }
   
@@ -52,7 +52,7 @@ export const getImage = (image) => {
 
 
 
-export const loadCropImage =  async (upload) => {
+export const loadCropImage = async (upload) => {
 
     const canvas = document.getElementById("upload")
 
@@ -77,14 +77,16 @@ export const loadCropImage =  async (upload) => {
 
     ctx.drawImage(image, 0, 0);
 
-    ctx.beginPath();
-    ctx.lineColor = "#000000"
-    ctx.arc(raduis, raduis, raduis, 0, 2 * Math.PI);
-    ctx.clip();
-    ctx.closePath();
-    ctx.restore();
+    // ctx.beginPath();
+    // ctx.lineColor = "#000000"
+    // ctx.arc(raduis, raduis, raduis, 0, 2 * Math.PI);
+    // ctx.clip();
+    // ctx.closePath();
+    // ctx.restore();
 
-    return canvas.toDataURL("image/png", 1.0)
+    // debugger
+
+    return canvas.toDataURL("image/png")
 
 
 };
