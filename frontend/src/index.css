@@ -574,7 +574,7 @@ form {
   outline: none;
 }
 .input-controller select option {
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 .input-controller select .active {
   width: 100%;
