@@ -22,6 +22,10 @@ const Preview = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
+    // WebSettings.setDomStorageEnabled(true)
+
+    // WebSettings settings = webView.getSettings();
+    // settings.setDomStorageEnabled(true);
     setLoading(true)
     fetchUser()
   }, [])
@@ -103,8 +107,6 @@ const Preview = () => {
       console.log(error)
     }
   }
-
-  console.log(userData)
 
   return (
     <React.Fragment>

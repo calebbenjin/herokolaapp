@@ -30,7 +30,7 @@ const Daalu = () => {
             <img src={daaluimg} alt="daaluimg" />
           </div>
           <div className="noticeCard">
-            <h2>Ensure to share downloaded image, and tagging us on any social media platform and tagging the influencer too to get your prices.</h2>
+            <h2>Ensure to post downloaded image on social media, tagging Hero Lager and your chosen Hero Ambassador to get your reward.</h2>
           </div>
           <Bottle bottleContainer="signupBottleContainer" className="signup-bottle"  />
         </div>

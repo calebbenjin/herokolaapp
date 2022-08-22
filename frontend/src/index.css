@@ -39,6 +39,10 @@ body {
   --darkgreenColor: rgb(12, 48, 20);
 }
 
+.terms a {
+  color: green;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -360,9 +364,10 @@ img {
   animation: MoveUpDown 2s linear infinite;
   width: 30%;
 }
+
 .home-bottle{
   animation: MoveUpDown 2s linear infinite;
-  width: 60%;
+  width: 80%;
 }
 
 @keyframes MoveUpDown {
@@ -566,6 +571,9 @@ form {
   background: transparent;
   border: solid 1px green;
   outline: none;
+}
+.input-controller select option {
+  text-transform: capitalize;
 }
 .input-controller select .active {
   width: 100%;

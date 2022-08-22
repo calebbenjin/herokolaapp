@@ -144,7 +144,7 @@ const Form = ({id, data}) => {
               type='checkbox'
               {...register('terms', { required: true })}
             />
-            <small className='terms'>I accept the terms and conditions</small>
+            <small className='terms'><a target="_blank" href="https://docs.google.com/document/d/1zp8e_632JsTS-cc8ucSIO7l0Etf-KBvh/edit?usp=sharing&ouid=100662321730297767116&rtpof=true&sd=true">I agree to the privacy policy</a></small>
           </label>
           {errors.terms && <span>Required input</span>}
         </div>

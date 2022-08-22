@@ -1,7 +1,7 @@
-import { createPortal } from 'react-dom'
 
 const Modal = ({ children, onModalClose, showModal, onSaveHandler }) => {
-  console.log(showModal)
+
+
   return (
     <div
       style={{

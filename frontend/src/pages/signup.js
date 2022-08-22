@@ -36,8 +36,6 @@ const Signup = () => {
     
   }
 
-  console.log(data)
-
   if(loading) return <Loader title="Breaking Kola..." />
   
 

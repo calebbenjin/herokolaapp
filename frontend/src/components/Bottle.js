@@ -7,7 +7,7 @@ const Bottle = ({ className, isText, bottleContainer, isBanner }) => {
       {isText ?  <div className='writeupsContainer'>
         <div className='card'>
         {isBanner ? (<p className='banner'>
-            Follow instructions to stand a chance to get a shoutout from Hero Celebrities and an initation to the Hero Events.
+        Please follow the instructions correctly to get a shoutout from your preferred Hero Ambassador and an invitation to party with celebrities at the Hero Kola Connect Tour.
           </p>) : null}
           
 
