@@ -430,10 +430,11 @@ img {
 ================== */
 
 .footer {
-  /* position: fixed;
-  bottom: -5rem; */
+  position: absolute;
+  bottom: -10rem;
   left: 0;
   width: 100%;
+  /* background: red; */
 }
 
 .signup-bottle {
@@ -442,6 +443,7 @@ img {
   bottom: 0;
   animation: MoveUpDown 2s linear infinite;
   width: 15%;
+  background: transparent;
 }
 
 
@@ -799,13 +801,6 @@ form {
   right: 5rem;
   z-index: 9;
   width: 150px;
-}
-
-.footer {
-  position: fixed;
-  bottom: -4rem;
-  left: 0;
-  width: 100%;
 }
 
 @media(max-width: 800px) {
