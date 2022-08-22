@@ -36,6 +36,8 @@ export const Demo = ({image, setImage, user, setImagePath}) => {
 
     alert(image)
 
+    alert(cropData)
+
     setImage(image)
   }
   
