@@ -6,9 +6,7 @@ export const drawOnCanvas =  async (bgImage, heroImage) => {
 
     const ctx = canvas.getContext("2d");
 
-    const userImage = localStorage.getItem('image')
-
-    // const name = localStorage.getItem('name')
+    const userImage = sessionStorage.getItem('image')
     
     const image = await getImage(userImage)
 
@@ -24,18 +22,9 @@ export const drawOnCanvas =  async (bgImage, heroImage) => {
 
     ctx.drawImage(bg, 0, 0, width, height);
 
-    ctx.drawImage(image, width * 0.10, height * 0.24, width * 0.35, height * 0.35);
+    ctx.drawImage(image, width * 0.10, height * 0.27, width * 0.35, height * 0.35);
 
     ctx.drawImage(hero, width * 0.40, height * 0.27, width * 0.26 / heroAspectRatio, height * 0.5 *  heroAspectRatio);
-
-    
-    // ctx.font = "18px bold Kawak_bold";
-    // ctx.fillStyle = "#0f3214"
-
-    // const length = name.length;
-
-    // ctx.fillText(name.toUpperCase(), width * 0.1396 - (length * 12) / 2, height * 0.6969);
-
 };
 
 

@@ -49,7 +49,7 @@ const Preview = () => {
 
     const length = name?.length
 
-    ctx.fillText(name.toUpperCase(), width * 0.3496 - (length * 12) / 2, height * 0.6850);
+    ctx.fillText(name.toUpperCase(), width * 0.3596 - (length * 12) / 2, height * 0.6980);
   })
 
   useLayoutEffect(() => {

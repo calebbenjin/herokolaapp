@@ -319,8 +319,8 @@ img {
 }
 
 .headimg {
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
   margin: 0 auto;
   border-radius: 50%;
   border: solid 4px #ac0000;
@@ -330,7 +330,7 @@ img {
 
 .bottleContainer {
   position: fixed;
-  top: 20rem;
+  top: 19rem;
   right: 0rem;
   bottom: 0rem;
   display: flex;
@@ -372,7 +372,7 @@ img {
 
 .home-bottle{
   animation: MoveUpDown 2s linear infinite;
-  width: 40%;
+  width: 35%;
 }
 
 @keyframes MoveUpDown {
@@ -387,7 +387,7 @@ img {
 .banner {
   background: linear-gradient(to right, rgba(255, 255, 5, 0.544), var(--greenColor), var(--greenColor));
   color: #fff;
-  padding: 2rem 6rem 2rem 2rem;
+  padding: 1rem 6rem 1rem 1rem;
   margin-right: -3rem;
   margin-top: 3rem;
 }
@@ -672,27 +672,26 @@ form {
   background-size: cover;
   height: 50vh;
   display: flex;
-  /* align-items: center; */
   justify-content: center;
   text-align: left;
-  padding: 4rem 2rem;
+  padding: 2rem;
   color: #fff;
 }
 
 .footerImg li {
   color: var(--yellowColor);
-  font-size: 1.5rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .footerImg button {
   color: #fff;
   background: var(--secondaryColor);
-  padding: 10px 20px;
+  padding: 9px 20px;
   border: none;
-  font-weight: 800;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 0.8rem;
   border-radius: 10px;
   margin-bottom: 1rem;
 }
