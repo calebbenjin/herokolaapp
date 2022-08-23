@@ -67,6 +67,54 @@ button {
   cursor: pointer !important;
 }
 
+
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  /* Styles */
+  }
+  
+  /* Smartphones (landscape) ----------- */
+  @media only screen and (min-width : 321px) {
+  /* Styles */
+  }
+  
+  /* Smartphones (portrait) ----------- */
+  @media only screen and (max-width : 320px) {
+  /* Styles */
+  }
+  
+  /* iPads (portrait and landscape) ----------- */
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+  /* Styles */
+
+  }
+  
+  /* iPads (landscape) ----------- */
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+  /* Styles */
+  }
+  
+  /* iPads (portrait) ----------- */
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+  /* Styles */
+  }
+  /**********
+  iPad 3
+  **********/
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+  /* Styles */
+  }
+  
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+  /* Styles */
+  }
+  /* Desktops and laptops ----------- */
+  @media only screen  and (min-width : 1224px) {
+  /* Styles */
+      
+  
 .modalWrapper {
   background-color: rgba(0, 0, 0, 0.583);
   width: 100%;
@@ -248,7 +296,8 @@ img {
   right: 5rem;
   left: 10rem;
   width: 75%;
-  padding: 2rem 2rem 4rem 2rem;
+  height: auto;
+  padding: 1rem 1rem 4rem 1rem;
 }
 
 .daaluContainer {
@@ -319,8 +368,8 @@ img {
 }
 
 .headimg {
-  width: 140px;
-  height: 140px;
+  width: 130px;
+  height: 130px;
   margin: 0 auto;
   border-radius: 50%;
   border: solid 4px #ac0000;
@@ -330,13 +379,13 @@ img {
 
 .bottleContainer {
   position: fixed;
-  top: 23rem;
+  top: 20rem;
   right: 0rem;
   bottom: 0rem;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  width: 50%;
+  width: 45%;
   height: 50%;
   z-index: 9;
 }
@@ -351,7 +400,7 @@ img {
   justify-content: center;
   width: 50%;
   z-index: 9;
-  background: red;
+  
 }
 
 .daalubottleContainer .writeupsContainer .card {
@@ -373,23 +422,24 @@ img {
 
 .home-bottle{
   animation: MoveUpDown 2s linear infinite;
-  width: 40%;
+  width: 45%;
+  margin-bottom: 3rem;
 }
 
 @keyframes MoveUpDown {
   0%, 100% {
-    margin-bottom: -1rem;
+    margin-bottom: 0rem;
   }
   50% {
-    margin-bottom: -6rem;
+    margin-bottom: 4rem;
   }
 }
 
 .banner {
   background: linear-gradient(to right, rgba(255, 255, 5, 0.544), var(--greenColor), var(--greenColor));
   color: #fff;
-  padding: 2rem;
-  margin-right: -3rem;
+  padding: 2rem 7rem 2rem 2rem;
+  margin-right: -6rem;
 }
 
 .noticeContainer {
@@ -414,7 +464,7 @@ img {
   background: linear-gradient(to right, rgba(255, 255, 5, 0.544), var(--greenColor), var(--greenColor));
   color: #fff;
   padding: 6px 0;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .noticeContainer h4 span {
@@ -436,7 +486,7 @@ img {
 
 .footer img {
   position: fixed;
-  bottom: -3.5rem;
+  bottom: -3rem;
   left: 0;
   width: 100%;
   z-index: -1;
@@ -805,564 +855,90 @@ form {
   z-index: 9;
   width: 150px;
 }
-
-@media only screen and (max-width: 1200px){
-  /*Tablets [601px -> 1200px]*/
-
-  .footer {
-    background: red;
-  }
-}
-
-@media(max-width: 801px) {
-  /* .mobile-screen {
-    background-image: url('../src/images/background.png');
-    background-position: left;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100% !important;
-    margin: 0 auto ;
-    overflow: scroll;
-  } */
-
-  body {
-    background-image: url('../src/images/herobg2.png');
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: cover;
-    height: 100vh;
-    /* overflow: hidden; */
-  }
-
-  .logo {
-    width: 25%; 
-    
-  }
-
-  .titleContainer {
-    margin-top: -1rem;
-    line-height: 0.8;
-  }
-
-  .daalutitleContainer {
-    text-align: center;
-    margin-top: -1rem;
-    line-height: 1;
   }
   
-  .daalutitleContainer .title {
-    font-size: 3rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    color: var(--darkgreenColor);
+  /* Large screens ----------- */
+  @media only screen  and (min-width : 1824px) {
+  /* Styles */
   }
   
-  .daalutitleContainer .subTitle {
-    font-size: 2rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    color: var(--secondaryColor);
+  /* iPhone 4 ----------- */
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+  /* Styles */
   }
   
-  .titleContainer .title {
-    font-size: 2.5rem;
-    margin: 0;
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+  /* Styles */
   }
   
-  .titleContainer .subTitle {
-    font-size: 2.5rem;
+  /* iPhone 5 ----------- */
+  @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+  /* Styles */
   }
   
-  .titleContainer .pick {
-    background: var(--greenColor);
-    color: #fff;
-    padding: 8px;
-    width: 70%;
-    margin: 0 auto;
+  @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+  /* Styles */
   }
   
-  .pick p {
-    font-size: 1rem;
-  }
-
-
-    /* HERO STYLING
-  =============================== */
-
-  .heroConrainer {
-    position: relative;
-  }
-
-  .wright-up {
-    height: 150px;
-    width: 100%;
-  }
-
-  .heroContent {
-    position: relative;
-  }
-
-  .userContainer {
-    background-image: url('../src/images/herobg.png');
-    background-position: left;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 2.5rem;
-    right: 0rem;
-    left: 1rem;
-    width: 95%;
-    padding: 1rem 0 2rem 0;
-  }
-
-  .hashTag {
-    position: absolute;
-    bottom: 0rem;
-    left: 0;
-    background: var(--darkgreenColor);
-    padding: 5px;
-    color: #fff;
-    font-size: 0.9rem;
-  }
-
-  .userContainer .imageContainer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    place-items: start;
-    grid-gap: 10px;
-    position: relative;
-    padding: 0 1.5rem;
-    width: 100%;
-  } 
-
-  .daaluContainer {
-    position: absolute;
-    top: 0rem;
-    right: 1rem;
-    left: 0rem;
-    width: 100%;
-    padding: 0.5rem 1rem;
-  }
-
-  .daaluimgContainer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 30vh;
-    background: rgb(250, 218, 115);
-    border: solid 1rem var(--orangeColor);
-  }
-
-  .daaluContainer img {
-    width: 25%;
-  }
-
-  .daaluContainer .noticeCard {
-    text-align: center;
-    padding: 1.5rem;
-    color: green;
-    background: rgb(250, 218, 115);
-  }
-
-  .daaluContainer .noticeCard h2 {
-    font-size: 1.2rem;
-  }
-
-  .headimg-box {
-    text-align: center;
-    margin: 0rem 0rem;
-    width: 100px;
-  }
-
-  .headimg-box p {
-    margin: 0;
-    background: var(--greenColor);
-    padding: 3px 10px;
-    color: #fff;
-    font-size: 0.6rem;
-    width: 100%;
-
-  }
-
-  .headimg {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto;
-    border-radius: 50%;
-    border: solid 4px #ac0000;
-    object-fit: cover;
-    background: #fff;
-  }
-
-  .bottleContainer {
-    position: fixed;
-    top: 31rem;
-    right: 0rem;
-    bottom: 0rem;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    width: 100%;
-    height: 200px;
-    z-index: 0;
-    background: transparent;
-  }
-
-  .signupBottleContainer {
-    position: fixed;
-    top: 61rem;
-    right: 0rem;
-    bottom: 0rem;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    width: 100%;
-    height: 200px;
-    z-index: 0;
-    background: transparent;
-  }
-
-  .writeupsContainer .card {
-    margin-right: 0rem;
-    margin-top: -10rem;
-  }
-
-  .home-bottle{
-    animation: MoveUpDown 2s linear infinite;
-    width: 35%;
-    margin-bottom: -3rem;
-  }
-
-  @keyframes MoveUpDown {
-    0%, 100% {
-      margin-bottom: 0rem;
-    }
-    50% {
-      margin-bottom: -1rem;
-    }
-  }
-
-  .daalubottleContainer {
-    position: fixed;
-    top: 1rem;
-    right: 0rem;
-    bottom: 0rem;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    width: 100%;
-    z-index: 9;
-    background: red;
-  }
-
-
-  .banner {
-    background: linear-gradient(to right, rgba(255, 255, 5, 0.544), var(--greenColor), var(--greenColor));
-    color: #fff;
-    padding: 0.8rem 3rem 0.8rem 0.8rem;
-    font-size: 0.8rem;
-    margin-right: -3rem;
-  }
-
-  .noticeContainer {
-    padding: 0px;
-    text-align: center;
-    margin-top: 1rem;
-    margin-left: 4rem;
-    margin-right: -4rem;
-  }
-
-  .modal {
-    width: 80%;
-    height: auto;
-    background: white;
-    color: #171717;
-    z-index: 999;
-    border-radius: 16px;
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
-    position: relative;
-    overflow: hidden;
-    box-sizing: border-box;
-  }
-
-
-  .noticeContainer h4 {
-    background: linear-gradient(to right, rgba(255, 255, 5, 0.544), var(--greenColor), var(--greenColor));
-    color: #fff;
-    padding: 6px 0;
-    font-size: 0.9rem;
-  }
-
-  .noticeContainer h4 span {
-    color: var(--yellowColor);
-  }
-
-
-  .noticeContainer p {
-    background: #fff;
-    color: rgb(24, 156, 24);
-    padding: 4px 0;
-    font-size: 0.9rem;
-  }
-
-  
-  .footer img {
-    position: fixed;
-    bottom: 0rem;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    
-  }
-
-
-  .imageuploader {
-    margin: 1rem auto;
-    text-align: center;
-    cursor: pointer;
+  /* iPhone 6, 7, 8 ----------- */
+  @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+  /* Styles */
   }
   
-  .imageuploader .previewContainer {
-    border: solid 5px var(--secondaryColor);
-    height: 90px;
-    width: 90px;
-    border-radius: 50%;
+  @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+  /* Styles */
   }
   
-  .frameContainer {
-    height: 80px;
-    width: 80px;
+  /* iPhone 6+, 7+, 8+ ----------- */
+  @media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+  /* Styles */
   }
   
-  .frameImg {
-    width: 100%;
+  @media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+  /* Styles */
   }
   
-  .previewImg {
-    height: 100%;
-    width: 100%;
-    border-radius: 50%;
-    object-fit: cover;
+  /* iPhone X ----------- */
+  @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+  /* Styles */
   }
   
-  .imageuploader {
-    position: relative;
+  @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+  /* Styles */
   }
   
-  .formContainer {
-    margin: 0rem auto;
-    width: 90%;
-    z-index: 99;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .signup-form form {
-    margin-top: -0.5rem;
+  /* iPhone XS Max, XR ----------- */
+  @media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+  /* Styles */
   }
   
-  form {
-    width: 90%;
-    z-index: 0;
-  }
-
-  .input-controller input {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    background: transparent;
-    border: solid 1px green;
-    color: green;
-    outline: none;
-  }
-
-  .input-controller input::placeholder {
-    font-weight: 300;
-    font-size: 1rem;
-    color: #171717;
-  }
-
-  .input-controller button {
-    width: 100%;
-    margin: 0 auto;
-    padding: 10px;
-    background: green;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 700;
-    border: none;
-    cursor: pointer;
-  }
-
-  .upload-button .here {
-    font-weight: 900;
-    color: #7e7d7d;
-    position: absolute;
-    bottom: 3.5rem;
-    left: -2.5rem;
-    font-size: 0.8rem;
-    white-space: nowrap;
-  }
-
-  .downloadScreen {
-    width: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-
-  .footerImg {
-    /* background-image: url('../src/images/Greern-bkg.png');
-    background-position: cover;
-    background-size: cover; */
-    /* height: 100%; */
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
-    text-align: left;
-    padding: 2rem 2rem;
-  }
-
-  .footerImg ol li {
-    margin-bottom: 1rem;
-    font-size: 1rem;
-  }
-
-  .overlayImg {
-    width: 80%;
-    margin-top: 4rem;
-  }
-
-  .overlayContent .text {
-    width: 60%;
-  }
-
-  .overlayContent .text h1 {
-    font-size: 2rem;
-  }
-
-  .overlayContent .text button {
-    width: 80%;
-    margin: 1.5rem auto;
-    padding: 15px;
-    text-transform: uppercase;
-    font-weight: 800;
-    border: none;
-    font-size: 1rem;
-  }
-
-  .signup-bottle {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    animation: MoveUpDown 2s linear infinite;
-    width: 20%;
+  @media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+  /* Styles */
   }
   
-  @keyframes MoveUpDown {
-    0%, 100% {
-      bottom: -1rem;
-    }
-    50% {
-      bottom: 0;
-    }
+  /* Samsung Galaxy S3 ----------- */
+  @media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+  /* Styles */
   }
-}
-
-
-
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 667px) {
-  .bottleContainer {
-    position: fixed;
-    top: 27rem;
-    right: 0rem;
-    bottom: 0rem;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    width: 100%;
-    height: 200px;
-    z-index: 0;
-    background: transparent;
+  
+  @media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2){
+  /* Styles */
   }
-
-  .home-bottle{
-    animation: MoveUpDown 2s linear infinite;
-    width: 25%;
-    margin-bottom: -8rem;
+  
+  /* Samsung Galaxy S4 ----------- */
+  @media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+  /* Styles */
   }
-
-  @keyframes MoveUpDown {
-    0%, 100% {
-      margin-bottom: 0rem;
-    }
-    50% {
-      margin-bottom: -1rem;
-    }
+  
+  @media only screen and (min-device-width: 320px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+  /* Styles */
   }
-}
-
-@media only screen and (min-device-width : 411px) and (max-device-width : 800px) {
-  .bottleContainer {
-    position: fixed;
-    top: 31rem;
-    right: 0rem;
-    bottom: 0rem;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    width: 100%;
-    height: 200px;
-    z-index: 0;
-    background: transparent;
+  
+  /* Samsung Galaxy S5 ----------- */
+  @media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+  /* Styles */
   }
-
-  .home-bottle{
-    animation: MoveUpDown 2s linear infinite;
-    width: 25%;
-    margin-bottom: -8rem;
+  
+  @media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+  /* Styles */
   }
-
-  @keyframes MoveUpDown {
-    0%, 100% {
-      margin-bottom: 0rem;
-    }
-    50% {
-      margin-bottom: -1rem;
-    }
-  }
-}
-
-@media only screen and (min-device-width : 300px) and (max-device-width : 400px) {
-  .bottleContainer {
-    position: fixed;
-    top: 27rem;
-    right: 0rem;
-    bottom: 0rem;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    width: 100%;
-    height: 200px;
-    z-index: 0;
-    background: transparent;
-  }
-
-  .home-bottle{
-    animation: MoveUpDown 2s linear infinite;
-    width: 25%;
-    margin-bottom: -8rem;
-  }
-
-  @keyframes MoveUpDown {
-    0%, 100% {
-      margin-bottom: 0rem;
-    }
-    50% {
-      margin-bottom: -1rem;
-    }
-  }
-}
