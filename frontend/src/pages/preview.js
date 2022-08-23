@@ -58,18 +58,21 @@ const Preview = () => {
   }, [])
 
   useEffect(() => {
+    setLoading(true)
     if (userData) {
+      setLoading(false)
       toDataUrl(`${userData?.previmage}`, setHeroImage)
       toDataUrl(`${userData?.bgimage}`, setBgImage)
     }
   }, [userData])
-
   
 
   useEffect(() => {
     //Display and draw canvas when the neccessary stuff loads
+    setLoading(true)
     if (bgImage && heroImage) {
       drawOnCanvas(bgImage, heroImage)
+      setLoading(false)
 
       setTimeout(() => {
         shootFireworks()
