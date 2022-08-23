@@ -6,10 +6,21 @@ import Demo from './Demo'
 
 const states = [
   "Adamawa",
+  "Anambra",
+  "Abia",
+  "Akwa Ibom",
+  "Bayelsa",
 "Bauchi",
 "Benue",
 "Borno",
+"Cross River",
+"Delta",
+"Ebonyi",
+"Enugu",
+"Ekiti",
+"Edo",
 "Gombe",
+"Imo",
 "Jigawa",
 "Kaduna",
 "Kano",
@@ -17,30 +28,19 @@ const states = [
 "Kebbi",
 "Kogi",
 "Kwara",
+"Lagos",
 "Nasarawa",
 "Niger",
-"Plateau",
-"Sokoto",
-"Taraba",
-"Yobe",
-"Zamfara",
-"Ekiti",
-"Lagos",
 "Ogun",
 "Ondo",
 "Osun",
 "Oyo",
-"Edo",
-"Delta",
-"Abia",
-"Anambra",
-"Akwa Ibom",
-"Bayelsa",
-"Cross River",
-"Ebonyi",
-"Enugu",
-"Imo",
-"Rivers"
+"Plateau",
+"Rivers",
+"Sokoto",
+"Taraba",
+"Yobe",
+"Zamfara",
 ]
 
 const Form = ({id, data}) => {
@@ -79,7 +79,7 @@ const Form = ({id, data}) => {
   
       if(res.ok) {
         const resData = await res.json()
-        // navigate(`/pages/preview/${resData._id}`)
+        navigate(`/pages/preview/${resData._id}`)
       } 
     } catch(error){
       console.log(error)
