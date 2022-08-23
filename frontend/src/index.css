@@ -165,7 +165,7 @@ img {
 }
 
 .titleContainer .title {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 900;
   text-transform: uppercase;
   /* line-height: 0.3; */
@@ -173,7 +173,7 @@ img {
 }
 
 .titleContainer .subTitle {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 900;
   text-transform: uppercase;
   color: var(--secondaryColor);
@@ -257,7 +257,7 @@ img {
   right: 5rem;
   left: 10rem;
   width: 75%;
-  padding: 2rem 2rem 4rem 2rem;
+  padding: 1rem 1rem 4rem 1rem;
 }
 
 .hashTag {
@@ -267,7 +267,7 @@ img {
   background: var(--darkgreenColor);
   padding: 10px;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .userContainer .imageContainer {
@@ -283,7 +283,7 @@ img {
   text-decoration: none;
 }
 
-.daaluimgContainer{
+.daaluimgContainer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -319,8 +319,8 @@ img {
 }
 
 .headimg {
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   margin: 0 auto;
   border-radius: 50%;
   border: solid 4px #ac0000;
@@ -330,13 +330,13 @@ img {
 
 .bottleContainer {
   position: fixed;
-  top: 23rem;
+  top: 20rem;
   right: 0rem;
   bottom: 0rem;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  width: 50%;
+  width: 40%;
   height: 50%;
   z-index: 9;
 }
@@ -351,7 +351,6 @@ img {
   justify-content: center;
   width: 50%;
   z-index: 9;
-  background: red;
 }
 
 .daalubottleContainer .writeupsContainer .card {
@@ -381,15 +380,16 @@ img {
     margin-bottom: -1rem;
   }
   50% {
-    margin-bottom: -6rem;
+    margin-bottom: -2rem;
   }
 }
 
 .banner {
   background: linear-gradient(to right, rgba(255, 255, 5, 0.544), var(--greenColor), var(--greenColor));
   color: #fff;
-  padding: 2rem;
+  padding: 2rem 6rem 2rem 2rem;
   margin-right: -3rem;
+  margin-top: 3rem;
 }
 
 .noticeContainer {
@@ -414,7 +414,7 @@ img {
   background: linear-gradient(to right, rgba(255, 255, 5, 0.544), var(--greenColor), var(--greenColor));
   color: #fff;
   padding: 6px 0;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .noticeContainer h4 span {
