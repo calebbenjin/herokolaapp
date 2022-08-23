@@ -28,6 +28,7 @@ body {
   background-position: cover;
   background-size: cover;
   height: 100vh;
+  overflow: hidden;
 }
 
 :root {
@@ -229,7 +230,7 @@ img {
 }
 
 .wright-up {
-  height: 400px;
+  height: 320px;
   width: 60%;
 }
 
@@ -372,12 +373,12 @@ img {
 
 .home-bottle{
   animation: MoveUpDown 2s linear infinite;
-  width: 80%;
+  width: 40%;
 }
 
 @keyframes MoveUpDown {
   0%, 100% {
-    margin-bottom: -8rem;
+    margin-bottom: -1rem;
   }
   50% {
     margin-bottom: -6rem;
@@ -388,7 +389,6 @@ img {
   background: linear-gradient(to right, rgba(255, 255, 5, 0.544), var(--greenColor), var(--greenColor));
   color: #fff;
   padding: 2rem;
-  font-size: 1.5rem;
   margin-right: -3rem;
 }
 
@@ -426,7 +426,7 @@ img {
   background: #fff;
   color: rgb(24, 156, 24);
   padding: 4px 0;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 
@@ -434,15 +434,12 @@ img {
 /* FOOTER
 ================== */
 
-.footer {
-  /* background: red; */
-}
-
 .footer img {
   position: fixed;
-  bottom: -6rem;
+  bottom: -3.5rem;
   left: 0;
   width: 100%;
+  z-index: -1;
 }
 
 .signup-bottle {
@@ -809,6 +806,14 @@ form {
   width: 150px;
 }
 
+@media only screen and (max-width: 1200px){
+  /*Tablets [601px -> 1200px]*/
+
+  .footer {
+    background: red;
+  }
+}
+
 @media(max-width: 801px) {
   /* .mobile-screen {
     background-image: url('../src/images/background.png');
@@ -908,7 +913,6 @@ form {
     right: 0rem;
     left: 1rem;
     width: 95%;
-    /* height: 60vh; */
     padding: 1rem 0 2rem 0;
   }
 
@@ -1109,6 +1113,7 @@ form {
     left: 0;
     width: 100%;
     height: 40px;
+    
   }
 
 

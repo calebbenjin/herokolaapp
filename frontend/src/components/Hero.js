@@ -1,15 +1,11 @@
 import React from 'react'
 import writerupimg from '../images/writerup.png'
-// import {data} from '../data'
 import { Link } from 'react-router-dom'
-import { IMG_URL } from '../config/index'
 import Footer from './Footer'
 import Header from './Header'
 import Bottle from './Bottle'
 
 const Hero = ({ data }) => {
-
-  console.log(data)
 
   return (
     <div className='heroConrainer'>

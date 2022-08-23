@@ -84,9 +84,7 @@ export const loadCropImage =  async (upload) => {
     ctx.closePath();
     ctx.restore();
 
-    return canvas.toDataURL("image/png", 1.0)
-
-
+    return canvas.toDataURL("image/png", 0.5)
 };
 
 
