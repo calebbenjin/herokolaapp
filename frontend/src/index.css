@@ -805,25 +805,7 @@ form {
   width: 150px;
 }
 
-@media only screen and (max-width: 1200px){
-  /*Tablets [601px -> 1200px]*/
-
-  .footer {
-    background: red;
-  }
-}
-
 @media(max-width: 801px) {
-  /* .mobile-screen {
-    background-image: url('../src/images/background.png');
-    background-position: left;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100% !important;
-    margin: 0 auto ;
-    overflow: scroll;
-  } */
 
   body {
     background-image: url('../src/images/herobg2.png');

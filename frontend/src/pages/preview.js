@@ -8,7 +8,7 @@ import { API_URL, IMG_URL } from '../config/index'
 import { download, drawOnCanvas, toDataUrl } from '../lib/canvas'
 
 const Preview = () => {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [userData, setUserData] = useState()
   const [lastuserData, setLastuserData] = useState()
   const [bgImage, setBgImage] = useState(null)
@@ -44,7 +44,7 @@ const Preview = () => {
 
     const height = canvas.height
 
-    ctx.font = `18px bolder Kawak-Bold`
+    ctx.font = `14px bolder Kawak-Bold`
     ctx.fillStyle = '#0f3214'
 
     const length = name?.length
@@ -69,10 +69,8 @@ const Preview = () => {
 
   useEffect(() => {
     //Display and draw canvas when the neccessary stuff loads
-    setLoading(true)
     if (bgImage && heroImage) {
       drawOnCanvas(bgImage, heroImage)
-      setLoading(false)
 
       setTimeout(() => {
         shootFireworks()
@@ -88,6 +86,7 @@ const Preview = () => {
   }
 
   const fetchUser = async () => {
+    setLoading(true)
     try {
       const res = await fetch(`${API_URL}/users/${params.id}`, {
         method: 'GET',
@@ -95,6 +94,11 @@ const Preview = () => {
 
       const dataUsers = await res.json()
       setUserData(dataUsers && dataUsers)
+      setLoading(true)
+
+      // if(res.ok) {
+      //   setLoading(false)
+      // }
 
       dataUsers?.users?.map((data, i, row) => {
         if (i + 1 === row.length) {
@@ -106,6 +110,10 @@ const Preview = () => {
       console.log(error)
     }
   }
+
+  // if(loading) {
+  //   return <Loader title='Breaking Kola...' />
+  // }
 
   return (
     <React.Fragment>
