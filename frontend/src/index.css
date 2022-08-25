@@ -272,7 +272,7 @@ img {
 
 .userContainer .imageContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   place-items: start;
   grid-gap: 1px;
   position: relative;
@@ -1251,9 +1251,6 @@ form {
     }
   }
 }
-
-
-
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 667px) {
   .bottleContainer {
