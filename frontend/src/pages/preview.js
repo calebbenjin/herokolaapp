@@ -8,7 +8,7 @@ import { API_URL, IMG_URL } from '../config/index'
 import { download, drawOnCanvas, toDataUrl } from '../lib/canvas'
 
 const Preview = () => {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [userData, setUserData] = useState()
   const [lastuserData, setLastuserData] = useState()
   const [bgImage, setBgImage] = useState(null)
@@ -22,7 +22,6 @@ const Preview = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    setLoading(true)
     fetchUser()
   }, [])
 
@@ -53,14 +52,18 @@ const Preview = () => {
   })
 
   useLayoutEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+      shootFireworks()
+    }, 4000)
     setWidth(ref.current.offsetWidth)
     setHeight(ref.current.offsetHeight)
+    
   }, [])
 
   useEffect(() => {
-    setLoading(true)
     if (userData) {
-      setLoading(false)
       toDataUrl(`${userData?.previmage}`, setHeroImage)
       toDataUrl(`${userData?.bgimage}`, setBgImage)
     }
@@ -71,11 +74,6 @@ const Preview = () => {
     //Display and draw canvas when the neccessary stuff loads
     if (bgImage && heroImage) {
       drawOnCanvas(bgImage, heroImage)
-
-      setTimeout(() => {
-        shootFireworks()
-        setLoading(false)
-      }, 1000)
     }
   }, [bgImage, heroImage])
 
@@ -111,9 +109,6 @@ const Preview = () => {
     }
   }
 
-  // if(loading) {
-  //   return <Loader title='Breaking Kola...' />
-  // }
 
   return (
     <React.Fragment>
