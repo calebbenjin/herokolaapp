@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import './App.css'
 import { Routes, Route} from 'react-router-dom'
 import Home from './pages/Home'
@@ -8,17 +9,21 @@ import Login from './pages/admin/index';
 import Upload from './pages/admin/upload';
 import Dashboard from './pages/admin/dashboard';
 import Daalu from './pages/Daalu';
-// import AnalyticsEventTracker from './components/AnalyticsEventTracker'
-// import ReactGA from 'react-ga'
+import ReactGA from 'react-ga'
 
 
 
 
 
-// const TRACKING_ID = "UA-12341234-1";
-// ReactGA.initialize(TRACKING_ID);
+const TRACKING_ID = "G-EE7W3CCH67";
+ReactGA.initialize(TRACKING_ID);
 
 function App() {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
+
   return (
     <>
       
