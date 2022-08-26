@@ -7,8 +7,10 @@ import { useParams } from 'react-router-dom'
 import { API_URL, IMG_URL } from '../config/index'
 import { download, drawOnCanvas, toDataUrl } from '../lib/canvas'
 
+
 const Preview = () => {
   const [loading, setLoading] = useState(false)
+  const [reLoad, setReload] = useState(false)
   const [userData, setUserData] = useState()
   const [lastuserData, setLastuserData] = useState()
   const [bgImage, setBgImage] = useState(null)
@@ -24,6 +26,10 @@ const Preview = () => {
   useEffect(() => {
     fetchUser()
   }, [])
+
+  function refreshPage() {
+    window.location.reload();
+  }
 
   var f = new FontFace(
     'Kawak-Bold',
@@ -56,10 +62,10 @@ const Preview = () => {
     setTimeout(() => {
       setLoading(false)
       shootFireworks()
-    }, 4000)
+      setReload(true)
+    }, 6000)
     setWidth(ref.current.offsetWidth)
     setHeight(ref.current.offsetHeight)
-    
   }, [])
 
   useEffect(() => {
@@ -69,6 +75,8 @@ const Preview = () => {
     }
   }, [userData])
   
+  // window.location.reload(false);
+ 
 
   useEffect(() => {
     //Display and draw canvas when the neccessary stuff loads
@@ -94,9 +102,10 @@ const Preview = () => {
       setUserData(dataUsers && dataUsers)
       setLoading(true)
 
-      // if(res.ok) {
-      //   setLoading(false)
-      // }
+      if(res.ok) {
+        // setLoading(false)
+        // window.location.reload(false);
+      }
 
       dataUsers?.users?.map((data, i, row) => {
         if (i + 1 === row.length) {
