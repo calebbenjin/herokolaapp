@@ -10,7 +10,7 @@ import { download, drawOnCanvas, toDataUrl } from '../lib/canvas'
 
 const Preview = () => {
   const [loading, setLoading] = useState(false)
-  const [reLoad, setReload] = useState(false)
+  const [reLoad, setReload] = useState()
   const [userData, setUserData] = useState()
   const [lastuserData, setLastuserData] = useState()
   const [bgImage, setBgImage] = useState(null)
@@ -26,10 +26,6 @@ const Preview = () => {
   useEffect(() => {
     fetchUser()
   }, [])
-
-  function refreshPage() {
-    window.location.reload();
-  }
 
   var f = new FontFace(
     'Kawak-Bold',
@@ -59,10 +55,10 @@ const Preview = () => {
 
   useLayoutEffect(() => {
     setLoading(true)
+    setReload({})
     setTimeout(() => {
       setLoading(false)
       shootFireworks()
-      setReload(true)
     }, 6000)
     setWidth(ref.current.offsetWidth)
     setHeight(ref.current.offsetHeight)
