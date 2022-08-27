@@ -28,6 +28,9 @@ const Signup = () => {
       })
   
       const dataUsers = await res.json()
+
+      sessionStorage.setItem("bgimage", `${dataUsers.bgimage}`)
+      sessionStorage.setItem("previmage", `${dataUsers.previmage}`)
   
       setData(dataUsers && dataUsers)
     } catch (error) {

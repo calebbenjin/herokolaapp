@@ -10,8 +10,9 @@ import { download, drawOnCanvas, toDataUrl } from '../lib/canvas'
 
 const Preview = () => {
   const [loading, setLoading] = useState(false)
-  const [reLoad, setReload] = useState()
   const [userData, setUserData] = useState()
+  const [previmage, setPrevimage] = useState(sessionStorage.getItem('previmage'))
+  const [bgimage, setBgimage] = useState(sessionStorage.getItem('bgimage'))
   const [lastuserData, setLastuserData] = useState()
   const [bgImage, setBgImage] = useState(null)
   const [heroImage, setHeroImage] = useState(null)
@@ -53,9 +54,10 @@ const Preview = () => {
     ctx.fillText(name.toUpperCase(), width * 0.3596 - (length * 12) / 2, height * 0.6980);
   })
 
+  console.log("PrevImage", previmage, "BgImage",bgimage)
+
   useLayoutEffect(() => {
     setLoading(true)
-    setReload({})
     setTimeout(() => {
       setLoading(false)
       shootFireworks()
@@ -66,12 +68,10 @@ const Preview = () => {
 
   useEffect(() => {
     if (userData) {
-      toDataUrl(`${userData?.previmage}`, setHeroImage)
-      toDataUrl(`${userData?.bgimage}`, setBgImage)
+      toDataUrl(`${userData?.previmage || previmage }`, setHeroImage)
+      toDataUrl(`${userData?.bgimage || bgimage}`, setBgImage)
     }
   }, [userData])
-  
-  // window.location.reload(false);
  
 
   useEffect(() => {
