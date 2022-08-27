@@ -108,6 +108,8 @@ export function toDataUrl(url, callback) {
         }
         reader.readAsDataURL(xhr.response);
     };
+
+    console.log("ToURL", callback)
     xhr.open('GET', url);
     xhr.responseType = 'blob';
     xhr.send();

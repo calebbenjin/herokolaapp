@@ -25,8 +25,7 @@ const Preview = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    // fetchUser()
-    
+    fetchUser()
   }, [])
 
   var f = new FontFace(
@@ -59,32 +58,35 @@ const Preview = () => {
 
   useLayoutEffect(() => {
     setLoading(true)
+    setWidth(ref.current.offsetWidth)
+    setHeight(ref.current.offsetHeight)
+    toDataUrl(`${previmage}`, setHeroImage)
+    toDataUrl(`${bgimage}`, setBgImage)
+    
+     if (bgImage && heroImage) {
+      drawOnCanvas(bgImage, heroImage)
+    }
     setTimeout(() => {
       setLoading(false)
       shootFireworks()
     }, 6000)
-    setWidth(ref.current.offsetWidth)
-    setHeight(ref.current.offsetHeight)
-    
-    toDataUrl(`${previmage}`, setHeroImage)
-    toDataUrl(`${bgimage}`, setBgImage)
-  }, [])
+  }, [bgImage, heroImage])
+
 
   // useEffect(() => {
   //   if (userData) {
   //     toDataUrl(`${previmage}`, setHeroImage)
   //     toDataUrl(`${bgimage}`, setBgImage)
-      
   //   }
   // }, [userData])
  
 
-  useEffect(() => {
-    //Display and draw canvas when the neccessary stuff loads
-    if (bgImage && heroImage) {
-      drawOnCanvas(bgImage, heroImage)
-    }
-  }, [bgImage, heroImage])
+  // useEffect(() => {
+  //   //Display and draw canvas when the neccessary stuff loads
+  //   // if (bgImage && heroImage) {
+  //   //   drawOnCanvas(bgImage, heroImage)
+  //   // }
+  // }, [bgImage, heroImage])
 
   const handleDownload = () => {
     if (download()) {
