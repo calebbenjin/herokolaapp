@@ -13,6 +13,7 @@ const Signup = () => {
   const params = useParams();
 
   useEffect(() => {
+    
     setLoading(true)
     setTimeout(() => {
       setLoading(false)

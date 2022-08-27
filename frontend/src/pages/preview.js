@@ -11,8 +11,7 @@ import { download, drawOnCanvas, toDataUrl } from '../lib/canvas'
 const Preview = () => {
   const [loading, setLoading] = useState(false)
   const [userData, setUserData] = useState()
-  const [previmage, setPrevimage] = useState(sessionStorage.getItem('previmage'))
-  const [bgimage, setBgimage] = useState(sessionStorage.getItem('bgimage'))
+  const [reload, setReload] = useState()
   const [lastuserData, setLastuserData] = useState()
   const [bgImage, setBgImage] = useState(null)
   const [heroImage, setHeroImage] = useState(null)
@@ -54,39 +53,41 @@ const Preview = () => {
     ctx.fillText(name.toUpperCase(), width * 0.3596 - (length * 12) / 2, height * 0.6980);
   })
 
-  console.log("PrevImage", previmage, "BgImage",bgimage)
-
   useLayoutEffect(() => {
+    
     setLoading(true)
     setWidth(ref.current.offsetWidth)
     setHeight(ref.current.offsetHeight)
-    toDataUrl(`${previmage}`, setHeroImage)
-    toDataUrl(`${bgimage}`, setBgImage)
-    
-     if (bgImage && heroImage) {
-      drawOnCanvas(bgImage, heroImage)
-    }
     setTimeout(() => {
       setLoading(false)
       shootFireworks()
+
+      var refresh = window.localStorage.getItem('refresh');
+
+      console.log("Fresh", refresh);
+
+      if (refresh===null){
+          window.location.reload();
+          window.localStorage.setItem('refresh', "1");
+      }
     }, 6000)
-  }, [bgImage, heroImage])
+  }, [])
 
 
-  // useEffect(() => {
-  //   if (userData) {
-  //     toDataUrl(`${previmage}`, setHeroImage)
-  //     toDataUrl(`${bgimage}`, setBgImage)
-  //   }
-  // }, [userData])
+  useEffect(() => {
+    if (userData) {
+      toDataUrl(`${userData?.previmage}`, setHeroImage)
+      toDataUrl(`${userData?.bgimage}`, setBgImage)
+    }
+  }, [userData])
  
 
-  // useEffect(() => {
-  //   //Display and draw canvas when the neccessary stuff loads
-  //   // if (bgImage && heroImage) {
-  //   //   drawOnCanvas(bgImage, heroImage)
-  //   // }
-  // }, [bgImage, heroImage])
+  useEffect(() => {
+    // Display and draw canvas when the neccessary stuff loads
+    if (bgImage && heroImage) {
+      drawOnCanvas(bgImage, heroImage)
+    }
+  }, [bgImage, heroImage])
 
   const handleDownload = () => {
     if (download()) {
@@ -107,6 +108,7 @@ const Preview = () => {
 
       if(res.ok) {
         // setLoading(false)
+        // window.location.reload(false);
         // window.location.reload(false);
       }
 
