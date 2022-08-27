@@ -25,6 +25,8 @@ const Preview = () => {
 
   useEffect(() => {
     fetchUser()
+
+      
   }, [])
 
   var f = new FontFace(
@@ -54,6 +56,7 @@ const Preview = () => {
   })
 
   useLayoutEffect(() => {
+    // window.localStorage.removeItem('refresh');
     
     setLoading(true)
     setWidth(ref.current.offsetWidth)
@@ -62,23 +65,31 @@ const Preview = () => {
     setTimeout(() => {
       setLoading(false)
       shootFireworks()
-    }, 3000)
 
-
-    setTimeout(() => {
       var refresh = window.localStorage.getItem('refresh');
 
-      console.log("Fresh1", refresh);
+      
 
-      if (!refresh===null){
-        window.location.reload();
+      if (refresh === null){
+        window.location.reload(true);
         window.localStorage.setItem('refresh', "1");
+        // setLoading(true)
+        console.log("Fresh1", refresh);
       }
-    }, 1000)
+    }, 3000)
     
   }, [])
 
-    
+  // var refresh = window.localStorage.getItem('refresh');
+
+  
+
+  // if (refresh === null){
+  //   window.location.reload(false);
+  //   window.localStorage.setItem('refresh', "1");
+  //   setLoading(true)
+  //   console.log("Fresh", refresh);
+  // }
 
   useEffect(() => {
     if (userData) {
