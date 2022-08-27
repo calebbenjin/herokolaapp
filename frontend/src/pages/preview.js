@@ -25,7 +25,8 @@ const Preview = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetchUser()
+    // fetchUser()
+    
   }, [])
 
   var f = new FontFace(
@@ -64,14 +65,18 @@ const Preview = () => {
     }, 6000)
     setWidth(ref.current.offsetWidth)
     setHeight(ref.current.offsetHeight)
+    
+    toDataUrl(`${previmage}`, setHeroImage)
+    toDataUrl(`${bgimage}`, setBgImage)
   }, [])
 
-  useEffect(() => {
-    if (userData) {
-      toDataUrl(`${userData?.previmage || previmage }`, setHeroImage)
-      toDataUrl(`${userData?.bgimage || bgimage}`, setBgImage)
-    }
-  }, [userData])
+  // useEffect(() => {
+  //   if (userData) {
+  //     toDataUrl(`${previmage}`, setHeroImage)
+  //     toDataUrl(`${bgimage}`, setBgImage)
+      
+  //   }
+  // }, [userData])
  
 
   useEffect(() => {
