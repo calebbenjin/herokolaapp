@@ -58,22 +58,27 @@ const Preview = () => {
     setLoading(true)
     setWidth(ref.current.offsetWidth)
     setHeight(ref.current.offsetHeight)
+
     setTimeout(() => {
       setLoading(false)
       shootFireworks()
     }, 3000)
 
+
+    setTimeout(() => {
+      var refresh = window.localStorage.getItem('refresh');
+
+      console.log("Fresh1", refresh);
+
+      if (!refresh===null){
+        window.location.reload();
+        window.localStorage.setItem('refresh', "1");
+      }
+    }, 1000)
     
   }, [])
 
-    var refresh = window.sessionStorage.getItem('refresh');
-
-    console.log("Fresh1", refresh);
-
-    if (refresh===null){
-      window.location.reload();
-      window.sessionStorage.setItem('refresh', "1");
-    }
+    
 
   useEffect(() => {
     if (userData) {
