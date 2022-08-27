@@ -61,18 +61,19 @@ const Preview = () => {
     setTimeout(() => {
       setLoading(false)
       shootFireworks()
+    }, 3000)
 
-      var refresh = window.localStorage.getItem('refresh');
-
-      console.log("Fresh", refresh);
-
-      if (refresh===null){
-          window.location.reload();
-          window.localStorage.setItem('refresh', "1");
-      }
-    }, 6000)
+    
   }, [])
 
+    var refresh = window.sessionStorage.getItem('refresh');
+
+    console.log("Fresh1", refresh);
+
+    if (refresh===null){
+      window.location.reload();
+      window.sessionStorage.setItem('refresh', "1");
+    }
 
   useEffect(() => {
     if (userData) {
