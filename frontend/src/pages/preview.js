@@ -22,21 +22,31 @@ const Preview = () => {
 
   const navigate = useNavigate()
 
-  function LoadOnce() {
-    if (localStorage.getItem('executed') === 'false') {
-      window.location.reload(false)
-      localStorage.setItem('executed', true)
-    }
-  }
+  // function LoadOnce() {
+  //   if (localStorage.getItem('executed') === 'false') {
+  //     window.location.reload(false)
+  //     localStorage.setItem('executed', true)
+  //   }
+  // }
 
-  // setTimeout(function () {
-  //   LoadOnce()
-  // }, 100)
+  function refresh() {
+    var url = window.location.origin;
+    var pathname = window.location.pathname;
+    var hash = window.location.hash;
+
+    if (localStorage.getItem('executed') === 'false') {
+        window.location = url + pathname + '?application_refresh=' + (Math.random() * 100000) + hash;
+          localStorage.setItem('executed', true)
+        }
+  
+    
+  }
 
   useEffect(() => {
     fetchUser()
     setTimeout(function () {
-      LoadOnce()
+      // LoadOnce()
+      refresh()
     }, 2000)
   }, [])
 
