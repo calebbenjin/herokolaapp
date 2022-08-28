@@ -22,6 +22,8 @@ const Signup = () => {
     fetchUser()
   }, [])
 
+  localStorage.setItem('executed', false)
+
   const fetchUser = async () => {
     try {
       const res = await fetch(`${API_URL}/users/${params.id}`, {

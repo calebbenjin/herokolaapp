@@ -7,7 +7,6 @@ import { useParams } from 'react-router-dom'
 import { API_URL, IMG_URL } from '../config/index'
 import { download, drawOnCanvas, toDataUrl } from '../lib/canvas'
 
-
 const Preview = () => {
   const [loading, setLoading] = useState(false)
   const [showReloadPage, setShowReloadPage] = useState(true)
@@ -31,7 +30,7 @@ const Preview = () => {
     'Kawak-Bold',
     'url(https://fontcdn-one.vercel.app/fonts/Kawak-Bold.otf)'
   )
-  
+
   f.load().then(function (font) {
     const canvas = document.getElementById('canvas')
 
@@ -50,7 +49,11 @@ const Preview = () => {
 
     const length = name?.length
 
-    ctx.fillText(name.toUpperCase(), width * 0.3596 - (length * 12) / 2, height * 0.6980);
+    ctx.fillText(
+      name.toUpperCase(),
+      width * 0.3596 - (length * 12) / 2,
+      height * 0.698
+    )
   })
 
   useLayoutEffect(() => {
@@ -62,8 +65,6 @@ const Preview = () => {
       setLoading(false)
       shootFireworks()
     }, 1000)
-
-
   }, [])
 
   useEffect(() => {
@@ -72,7 +73,6 @@ const Preview = () => {
       toDataUrl(`${userData?.bgimage}`, setBgImage)
     }
   }, [userData])
- 
 
   useEffect(() => {
     // Display and draw canvas when the neccessary stuff loads
@@ -98,7 +98,7 @@ const Preview = () => {
       setUserData(dataUsers && dataUsers)
 
       console.log(dataUsers)
-      if(res.ok) {
+      if (res.ok) {
         setLoading(false)
       }
 
@@ -113,26 +113,37 @@ const Preview = () => {
     }
   }
 
-  const reloadPage = () => {
-    shootFireworks()
-    // window.location.reload(true)
-    fetchUser()
-    // localStorage.setItem("reload", 'reloaded')
-    setShowReloadPage(false)
+  // const reloadPage = () => {
+  //   shootFireworks()
+  //   // window.location.reload(true)
+  //   fetchUser()
+  //   // localStorage.setItem("reload", 'reloaded')
+  //   setShowReloadPage(false)
+  // }
+
+  function LoadOnce() {
+    if (localStorage.getItem('executed') == 'false') {
+      window.location.reload()
+      localStorage.setItem('executed', true)
+    }
   }
 
+  setTimeout(function () {
+    LoadOnce()
+  }, 100)
 
   return (
     <React.Fragment>
-    {showReloadPage ? 
-    <div className="reloadPage">
-      <div className="container">
-        <h2> 🎉✨ Congratulation 👏✨</h2>
-        <h2>✨ {lastuserData?.firstname} ✨</h2>
+      {/* {showReloadPage ? (
+        <div className='reloadPage'>
+          <div className='container'>
+            <h2> 🎉✨ Congratulation 👏✨</h2>
+            <h2>✨ {lastuserData?.firstname} ✨</h2>
 
-        <button onClick={reloadPage}>Proceed 🎉✨👏✨</button>
-      </div>
-    </div> : null}
+            <button onClick={LoadOnce()}>Proceed 🎉✨👏✨</button>
+          </div>
+        </div>
+      ) : null} */}
       <main className='downloadScreen' ref={ref}>
         {width && (
           <canvas
