@@ -1362,6 +1362,7 @@ form {
     background: var(--orangeColor);
     margin-top: 2rem;
     color: var(--greenColor);
+    color: rgb(15, 50, 20);
   }
 
   .reloadPage .container {
@@ -1369,8 +1370,9 @@ form {
     line-height: 2.5;
   }
   
-  .reloadPage .container h2 {
+  .reloadPage .container h2, h3 {
     color: var(--greenColor);
+    color: rgb(15, 50, 20);
   }
   
 

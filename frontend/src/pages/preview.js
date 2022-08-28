@@ -146,11 +146,11 @@ const Preview = () => {
 
   return (
     <React.Fragment>
-      {showReloadPage === true ? (
+      {showReloadPage === false ? (
         <div className='reloadPage'>
           <div className='container'>
-            <h1> ✨ Congratulation 👏</h1>
-            <h2>🎉 {lastuserData?.firstname} 🎉</h2>
+            <h2> ✨ Congratulation 👏</h2>
+            <h3>🎉 {lastuserData?.firstname} 🎉</h3>
 
             <button onClick={reloadPage}>Proceed</button>
           </div>
