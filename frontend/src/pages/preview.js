@@ -22,8 +22,22 @@ const Preview = () => {
 
   const navigate = useNavigate()
 
+  function LoadOnce() {
+    if (localStorage.getItem('executed') === 'false') {
+      window.location.reload(true)
+      localStorage.setItem('executed', true)
+    }
+  }
+
+  // setTimeout(function () {
+  //   LoadOnce()
+  // }, 100)
+
   useEffect(() => {
     fetchUser()
+    setTimeout(function () {
+      LoadOnce()
+    }, 2000)
   }, [])
 
   var f = new FontFace(
@@ -121,16 +135,7 @@ const Preview = () => {
   //   setShowReloadPage(false)
   // }
 
-  function LoadOnce() {
-    if (localStorage.getItem('executed') == 'false') {
-      window.location.reload()
-      localStorage.setItem('executed', true)
-    }
-  }
-
-  setTimeout(function () {
-    LoadOnce()
-  }, 100)
+  
 
   return (
     <React.Fragment>
