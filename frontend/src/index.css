@@ -1332,7 +1332,7 @@ form {
 @media only screen and (min-device-width : 300px) and (max-device-width : 400px) {
   .bottleContainer {
     position: fixed;
-    top: 28rem;
+    top: 29rem;
     right: 0rem;
     bottom: 0rem;
     display: flex;
