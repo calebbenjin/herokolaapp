@@ -30,16 +30,15 @@ const Preview = () => {
   // }
 
   function refresh() {
-    var url = window.location.origin;
-    var pathname = window.location.pathname;
-    var hash = window.location.hash;
+    var url = window.location.origin
+    var pathname = window.location.pathname
+    var hash = window.location.hash
 
     if (localStorage.getItem('executed') === 'false') {
-        window.location = url + pathname + '?application_refresh=' + (Math.random() * 100000) + hash;
-          localStorage.setItem('executed', true)
-        }
-  
-    
+      window.location =
+        url + pathname + '?application_refresh=' + Math.random() * 100000 + hash
+      localStorage.setItem('executed', true)
+    }
   }
 
   useEffect(() => {
@@ -47,7 +46,7 @@ const Preview = () => {
     setTimeout(function () {
       // LoadOnce()
       refresh()
-    }, 2000)
+    }, 100)
   }, [])
 
   var f = new FontFace(
@@ -144,8 +143,6 @@ const Preview = () => {
   //   // localStorage.setItem("reload", 'reloaded')
   //   setShowReloadPage(false)
   // }
-
-  
 
   return (
     <React.Fragment>
