@@ -24,7 +24,7 @@ const Preview = () => {
 
   function LoadOnce() {
     if (localStorage.getItem('executed') === 'false') {
-      window.location.reload(true)
+      window.location.reload(false)
       localStorage.setItem('executed', true)
     }
   }
