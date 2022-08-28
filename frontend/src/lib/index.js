@@ -2,7 +2,7 @@ import confetti from 'canvas-confetti'
 
 
 export const shootFireworks = () => {
-  const duration = 3 * 2000
+  const duration = 3 * 6000
   const animationEnd = Date.now() + duration
   const defaults = { startVelocity: 30, spread: 160, ticks: 30, zIndex: 0 }
 

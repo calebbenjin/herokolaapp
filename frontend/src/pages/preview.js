@@ -10,6 +10,7 @@ import { download, drawOnCanvas, toDataUrl } from '../lib/canvas'
 
 const Preview = () => {
   const [loading, setLoading] = useState(false)
+  const [showReloadPage, setShowReloadPage] = useState(true)
   const [userData, setUserData] = useState()
   const [lastuserData, setLastuserData] = useState()
   const [bgImage, setBgImage] = useState(null)
@@ -60,7 +61,7 @@ const Preview = () => {
     setTimeout(() => {
       setLoading(false)
       shootFireworks()
-    }, 3000)
+    }, 1000)
 
 
   }, [])
@@ -95,12 +96,10 @@ const Preview = () => {
 
       const dataUsers = await res.json()
       setUserData(dataUsers && dataUsers)
-      setLoading(true)
 
+      console.log(dataUsers)
       if(res.ok) {
-        // setLoading(false)
-        // window.location.reload(false);
-        // window.location.reload(false);
+        setLoading(false)
       }
 
       dataUsers?.users?.map((data, i, row) => {
@@ -114,9 +113,26 @@ const Preview = () => {
     }
   }
 
+  const reloadPage = () => {
+    shootFireworks()
+    // window.location.reload(true)
+    fetchUser()
+    // localStorage.setItem("reload", 'reloaded')
+    setShowReloadPage(false)
+  }
+
 
   return (
     <React.Fragment>
+    {showReloadPage ? 
+    <div className="reloadPage">
+      <div className="container">
+        <h2> 🎉✨ Congratulation 👏✨</h2>
+        <h2>✨ {lastuserData?.firstname} ✨</h2>
+
+        <button onClick={reloadPage}>Proceed 🎉✨👏✨</button>
+      </div>
+    </div> : null}
       <main className='downloadScreen' ref={ref}>
         {width && (
           <canvas
