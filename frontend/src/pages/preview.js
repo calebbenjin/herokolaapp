@@ -146,7 +146,7 @@ const Preview = () => {
 
   return (
     <React.Fragment>
-      {showReloadPage === false ? (
+      {showReloadPage === true ? (
         <div className='reloadPage'>
           <div className='container'>
             <h2> ✨ Congratulation 👏</h2>
