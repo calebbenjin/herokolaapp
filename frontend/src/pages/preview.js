@@ -46,7 +46,7 @@ const Preview = () => {
     setTimeout(function () {
       // LoadOnce()
       refresh()
-    }, 100)
+    }, 1100)
   }, [])
 
   var f = new FontFace(
