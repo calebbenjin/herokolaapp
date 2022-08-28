@@ -1336,7 +1336,11 @@ form {
 @media only screen and (min-device-width : 300px) and (max-device-width : 400px) {
 
   .reloadPage {
-    background: #ffdd00;
+    /* background: #ffdd00; */
+    background-image: url('../src/images/herobg.png');
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
     padding: 10px;
     position: fixed;
     top: 0;
@@ -1357,6 +1361,7 @@ form {
     font-weight: 700;
     background: var(--orangeColor);
     margin-top: 2rem;
+    color: var(--greenColor);
   }
 
   .reloadPage .container {
@@ -1365,7 +1370,7 @@ form {
   }
   
   .reloadPage .container h2 {
-    text-align: center;
+    color: var(--greenColor);
   }
   
 

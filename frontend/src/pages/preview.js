@@ -149,10 +149,10 @@ const Preview = () => {
       {showReloadPage === true ? (
         <div className='reloadPage'>
           <div className='container'>
-            <h2> 🎉✨ Congratulation 👏✨</h2>
-            <h2>✨ {lastuserData?.firstname} ✨</h2>
+            <h1> ✨ Congratulation 👏</h1>
+            <h2>🎉 {lastuserData?.firstname} 🎉</h2>
 
-            <button onClick={reloadPage}>Proceed 🎉✨👏✨</button>
+            <button onClick={reloadPage}>Proceed</button>
           </div>
         </div>
       ) : null}
