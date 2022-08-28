@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import {API_URL} from '../config/index'
 import Demo from './Demo'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const states = [
   "Adamawa",
@@ -80,17 +82,19 @@ const Form = ({id, data}) => {
       if(res.ok) {
         const resData = await res.json()
         navigate(`/pages/preview/${resData._id}`)
-      } 
+      } else {
+        toast("Email has been used, Please change email")
+      }
     } catch(error){
-      console.log(error)
+      console.log("Wrong email")
     }  
   }
 
 
   return (
     <div className='formContainer signup-form'>
+      <ToastContainer />
       <Demo image={image} setImage={setImage} setImagePath={setImagePath} user={data} />
-      {/* <small className="upload">Upload your photo</small> */}
       <form onSubmit={handleSubmit(handleUpload)}>
         <div className='input-controller'>
           <input
