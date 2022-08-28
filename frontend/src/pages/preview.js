@@ -11,7 +11,6 @@ import { download, drawOnCanvas, toDataUrl } from '../lib/canvas'
 const Preview = () => {
   const [loading, setLoading] = useState(false)
   const [userData, setUserData] = useState()
-  const [reload, setReload] = useState()
   const [lastuserData, setLastuserData] = useState()
   const [bgImage, setBgImage] = useState(null)
   const [heroImage, setHeroImage] = useState(null)
@@ -25,8 +24,6 @@ const Preview = () => {
 
   useEffect(() => {
     fetchUser()
-
-      
   }, [])
 
   var f = new FontFace(
@@ -56,8 +53,6 @@ const Preview = () => {
   })
 
   useLayoutEffect(() => {
-    // window.localStorage.removeItem('refresh');
-    
     setLoading(true)
     setWidth(ref.current.offsetWidth)
     setHeight(ref.current.offsetHeight)
@@ -65,31 +60,10 @@ const Preview = () => {
     setTimeout(() => {
       setLoading(false)
       shootFireworks()
-
-      var refresh = window.localStorage.getItem('refresh');
-
-      
-
-      if (refresh === null){
-        window.location.reload(true);
-        window.localStorage.setItem('refresh', "1");
-        // setLoading(true)
-        console.log("Fresh1", refresh);
-      }
     }, 3000)
-    
+
+
   }, [])
-
-  // var refresh = window.localStorage.getItem('refresh');
-
-  
-
-  // if (refresh === null){
-  //   window.location.reload(false);
-  //   window.localStorage.setItem('refresh', "1");
-  //   setLoading(true)
-  //   console.log("Fresh", refresh);
-  // }
 
   useEffect(() => {
     if (userData) {
