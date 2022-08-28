@@ -1375,8 +1375,8 @@ form {
   }
 
   .headimg {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     margin: 0 auto;
     border-radius: 50%;
     border: solid 4px #ac0000;
@@ -1450,7 +1450,7 @@ form {
   .input-controller button {
     width: 100%;
     margin: 0 auto;
-    padding: 6px;
+    padding: 10px;
     background: green;
     color: #fff;
     text-transform: uppercase;
