@@ -9,7 +9,7 @@ import { download, drawOnCanvas, toDataUrl } from '../lib/canvas'
 
 const Preview = () => {
   const [loading, setLoading] = useState(false)
-  const [showReloadPage, setShowReloadPage] = useState(true)
+  const [showReloadPage, setShowReloadPage] = useState(localStorage.getItem('executed') === 'false')
   const [userData, setUserData] = useState()
   const [lastuserData, setLastuserData] = useState()
   const [bgImage, setBgImage] = useState(null)
@@ -22,30 +22,23 @@ const Preview = () => {
 
   const navigate = useNavigate()
 
-  // function LoadOnce() {
+  // function refresh() {
+  //   var url = window.location.origin
+  //   var pathname = window.location.pathname
+  //   var hash = window.location.hash
+
   //   if (localStorage.getItem('executed') === 'false') {
-  //     window.location.reload(false)
+  //     window.location =
+  //       url + pathname + '?application_refresh=' + Math.random() * 100000 + hash
   //     localStorage.setItem('executed', true)
   //   }
   // }
-
-  function refresh() {
-    var url = window.location.origin
-    var pathname = window.location.pathname
-    var hash = window.location.hash
-
-    if (localStorage.getItem('executed') === 'false') {
-      window.location =
-        url + pathname + '?application_refresh=' + Math.random() * 100000 + hash
-      localStorage.setItem('executed', true)
-    }
-  }
 
   useEffect(() => {
     fetchUser()
     setTimeout(function () {
       // LoadOnce()
-      refresh()
+      // refresh()
     }, 1100)
   }, [])
 
@@ -136,26 +129,33 @@ const Preview = () => {
     }
   }
 
-  // const reloadPage = () => {
-  //   shootFireworks()
-  //   // window.location.reload(true)
-  //   fetchUser()
-  //   // localStorage.setItem("reload", 'reloaded')
-  //   setShowReloadPage(false)
-  // }
+  const reloadPage = () => {
+    shootFireworks()
+    var url = window.location.origin
+    var pathname = window.location.pathname
+    var hash = window.location.hash
+
+    if (localStorage.getItem('executed') === 'false') {
+      window.location =
+        url + pathname + '?application_refresh=' + Math.random() * 100000 + hash
+      localStorage.setItem('executed', true)
+    }
+  }
+
+  console.log(showReloadPage)
 
   return (
     <React.Fragment>
-      {/* {showReloadPage ? (
+      {showReloadPage === true ? (
         <div className='reloadPage'>
           <div className='container'>
             <h2> 🎉✨ Congratulation 👏✨</h2>
             <h2>✨ {lastuserData?.firstname} ✨</h2>
 
-            <button onClick={LoadOnce()}>Proceed 🎉✨👏✨</button>
+            <button onClick={reloadPage}>Proceed 🎉✨👏✨</button>
           </div>
         </div>
-      ) : null} */}
+      ) : null}
       <main className='downloadScreen' ref={ref}>
         {width && (
           <canvas
