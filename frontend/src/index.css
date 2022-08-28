@@ -315,7 +315,6 @@ img {
   padding: 3px 10px;
   color: #fff;
   font-size: 0.9rem;
-  
 }
 
 .headimg {
@@ -817,7 +816,7 @@ form {
   }
 
   .logo {
-    width: 25%; 
+    width: 20%; 
     
   }
 
@@ -833,7 +832,7 @@ form {
   }
   
   .daalutitleContainer .title {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 900;
     text-transform: uppercase;
     color: var(--darkgreenColor);
@@ -847,12 +846,12 @@ form {
   }
   
   .titleContainer .title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin: 0;
   }
   
   .titleContainer .subTitle {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   
   .titleContainer .pick {
@@ -864,7 +863,7 @@ form {
   }
   
   .pick p {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
 
@@ -894,7 +893,7 @@ form {
     right: 0rem;
     left: 1rem;
     width: 95%;
-    padding: 1rem 0 2rem 0;
+    padding: 1rem 0 3rem 0;
   }
 
   .hashTag {
@@ -953,7 +952,7 @@ form {
   .headimg-box {
     text-align: center;
     margin: 0rem 0rem;
-    width: 100px;
+    width: 90px;
   }
 
   .headimg-box p {
@@ -985,7 +984,7 @@ form {
     align-items: flex-end;
     justify-content: center;
     width: 100%;
-    height: 200px;
+    height: 180px;
     z-index: 0;
     background: transparent;
   }
@@ -1252,41 +1251,11 @@ form {
   }
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 667px) {
-  .bottleContainer {
-    position: fixed;
-    top: 27rem;
-    right: 0rem;
-    bottom: 0rem;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    width: 100%;
-    height: 200px;
-    z-index: 0;
-    background: transparent;
-  }
-
-  .home-bottle{
-    animation: MoveUpDown 2s linear infinite;
-    width: 25%;
-    margin-bottom: -8rem;
-  }
-
-  @keyframes MoveUpDown {
-    0%, 100% {
-      margin-bottom: 0rem;
-    }
-    50% {
-      margin-bottom: -1rem;
-    }
-  }
-}
 
 @media only screen and (min-device-width : 411px) and (max-device-width : 800px) {
   .bottleContainer {
     position: fixed;
-    top: 31rem;
+    top: 29rem;
     right: 0rem;
     bottom: 0rem;
     display: flex;
@@ -1300,7 +1269,7 @@ form {
 
   .home-bottle{
     animation: MoveUpDown 2s linear infinite;
-    width: 25%;
+    width: 20%;
     margin-bottom: -8rem;
   }
 
@@ -1311,6 +1280,52 @@ form {
     50% {
       margin-bottom: -1rem;
     }
+  }
+
+  .signup-bottle {
+    position: fixed;
+    right: 0.5rem;
+    bottom: 0;
+    animation: MoveUpDown 2s linear infinite;
+    width: 15%;
+    background: transparent;
+  }
+
+  .input-controller input {
+    width: 100%;
+    padding: 6px;
+    border: none;
+    background: transparent;
+    border: solid 1px green;
+    color: green;
+    outline: none;
+    font-size: 0.9rem;
+  }
+
+  .input-controller select {
+    width: 100%;
+    padding: 6px;
+    border: none;
+    background: transparent;
+    border: solid 1px green;
+    outline: none;
+  }
+
+  .input-controller button {
+    width: 100%;
+    margin: 0 auto;
+    padding: 6px;
+    background: green;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+  }
+
+  form {
+    width: 80%;
+    margin: 2rem auto;
   }
 }
 
@@ -1324,15 +1339,15 @@ form {
     align-items: flex-end;
     justify-content: center;
     width: 100%;
-    height: 200px;
+    height: 150px;
     z-index: 0;
     background: transparent;
   }
 
   .home-bottle{
     animation: MoveUpDown 2s linear infinite;
-    width: 25%;
-    margin-bottom: -8rem;
+    width: 20%;
+    margin-bottom: -15rem;
   }
 
   @keyframes MoveUpDown {
@@ -1343,4 +1358,134 @@ form {
       margin-bottom: -1rem;
     }
   }
+
+
+  .headimg-box p {
+    margin: 0;
+    background: var(--greenColor);
+    padding: 3px 0px;
+    color: #fff;
+    font-size: 0.8rem;
+  }
+
+  .headimg-box {
+    text-align: center;
+    margin: 1rem 1rem;
+    width: 90%;
+  }
+
+  .headimg {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: solid 4px #ac0000;
+    object-fit: cover;
+    background: #fff;
+  }
+
+  .userContainer .imageContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: start;
+    grid-gap: 0px;
+    position: relative;
+    width: 100%;
+    padding: 0px;
+  } 
+
+  .userContainer {
+    background-image: url('../src/images/herobg.png');
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 1rem;
+    right: 0rem;
+    left: 1rem;
+    width: 95%;
+    padding: 0rem 0rem 2rem 0rem;
+  }
+
+  .hashTag {
+    position: absolute;
+    bottom: 0rem;
+    left: 0;
+    background: var(--darkgreenColor);
+    padding: 7px;
+    color: #fff;
+    font-size: 0.8rem;
+  }
+
+  .titleContainer .title {
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    /* line-height: 0.3; */
+    color: var(--darkgreenColor);
+  }
+  
+  .titleContainer .subTitle {
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--secondaryColor);
+  }
+
+  .logo {
+    width: 20%;
+  }
+
+  .input-controller input {
+    width: 100%;
+    padding: 6px;
+    border: none;
+    background: transparent;
+    border: solid 1px green;
+    color: green;
+    outline: none;
+    font-size: 0.9rem;
+  }
+
+  .input-controller button {
+    width: 100%;
+    margin: 0 auto;
+    padding: 6px;
+    background: green;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+  }
+
+  .input-controller select {
+    width: 100%;
+    padding: 6px;
+    border: none;
+    background: transparent;
+    border: solid 1px green;
+    outline: none;
+  }
+
+  .signup-bottle {
+    position: fixed;
+    right: 0.5rem;
+    bottom: 0;
+    animation: MoveUpDown 2s linear infinite;
+    width: 15%;
+    background: transparent;
+  }
+
+  .pick p {
+    font-size: 0.8rem;
+    letter-spacing: 0.2rem;
+    font-weight: 500;
+  }
+
+  form {
+    width: 80%;
+    margin: 2rem auto;
+  }
+  
 }
