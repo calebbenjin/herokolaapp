@@ -5,12 +5,14 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Loader from '../components/Loader';
 import {API_URL} from '../config/index'
+import ReactGA from 'react-ga'
 
 const Home = () => {
   const [loading, setLoading] = useState(false)
   const [userData, setUserData] = useState()
 
   useEffect(() => {
+    GApageView("Home Page")
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
@@ -18,6 +20,10 @@ const Home = () => {
 
     fetchUser()
   },[])
+
+  const GApageView = (page) => {   
+    ReactGA.pageview(page);
+  }
 
   const fetchUser = async () => {
     const res = await fetch(`${API_URL}/users`, {

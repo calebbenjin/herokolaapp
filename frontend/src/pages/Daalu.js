@@ -5,12 +5,19 @@ import { shootFireworks } from '../lib'
 import Bottle from '../components/Bottle'
 import Footer from '../components/Footer'
 import Logo from '../components/Logo'
+import ReactGA from 'react-ga'
+
 
 const Daalu = () => {
 
   useEffect(() => {
+    GApageView("Daalu Page")
     shootFireworks()
   },[])
+
+  const GApageView = (page) => {   
+    ReactGA.pageview(page);
+  }
 
 
   return (

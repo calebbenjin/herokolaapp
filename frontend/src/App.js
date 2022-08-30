@@ -15,14 +15,20 @@ import ReactGA from 'react-ga'
 
 
 
-const TRACKING_ID = "G-EE7W3CCH67";
-ReactGA.initialize(TRACKING_ID);
+
 
 function App() {
+
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    initGA()
   }, []);
 
+  const  initGA = () => {
+    const TRACKING_ID = "G-EE7W3CCH67";
+    ReactGA.initialize(TRACKING_ID, { standardImplementation: true });  
+
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }
 
   return (
     <>

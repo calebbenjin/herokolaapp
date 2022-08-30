@@ -6,6 +6,7 @@ import { AiOutlineInstagram, AiFillTwitterCircle } from 'react-icons/ai'
 import { useParams } from 'react-router-dom'
 import { API_URL, IMG_URL } from '../config/index'
 import { download, drawOnCanvas, toDataUrl } from '../lib/canvas'
+import ReactGA from 'react-ga'
 
 const Preview = () => {
   const [loading, setLoading] = useState(false)
@@ -36,10 +37,7 @@ const Preview = () => {
 
   useEffect(() => {
     fetchUser()
-    setTimeout(function () {
-      // LoadOnce()
-      // refresh()
-    }, 1100)
+    GApageView("Download Page")
   }, [])
 
   var f = new FontFace(
@@ -142,7 +140,9 @@ const Preview = () => {
     }
   }
 
-  console.log(showReloadPage)
+  const GApageView = (page) => {   
+    ReactGA.pageview(page);
+  }
 
   return (
     <React.Fragment>

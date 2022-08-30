@@ -6,6 +6,7 @@ import Header from '../components/Header'
 import Loader from '../components/Loader'
 import { useParams } from "react-router-dom";
 import {API_URL} from '../config/index'
+import ReactGA from 'react-ga'
 
 const Signup = () => {
   const [loading, setLoading] = useState(false)
@@ -13,7 +14,7 @@ const Signup = () => {
   const params = useParams();
 
   useEffect(() => {
-    
+    GApageView("Sign up Page")
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
@@ -21,6 +22,10 @@ const Signup = () => {
 
     fetchUser()
   }, [])
+
+  const GApageView = (page) => {   
+    ReactGA.pageview(page);
+  }
 
   localStorage.setItem('executed', false)
 
