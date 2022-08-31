@@ -12,7 +12,7 @@ const Home = () => {
   const [userData, setUserData] = useState()
 
   useEffect(() => {
-    GApageView("Home Page")
+    ReactGA.pageview(window.location.pathname);
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
@@ -21,9 +21,7 @@ const Home = () => {
     fetchUser()
   },[])
 
-  const GApageView = (page) => {   
-    ReactGA.pageview(page);
-  }
+  
 
   const fetchUser = async () => {
     const res = await fetch(`${API_URL}/users`, {

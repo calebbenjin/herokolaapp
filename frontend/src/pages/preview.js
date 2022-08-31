@@ -37,7 +37,7 @@ const Preview = () => {
 
   useEffect(() => {
     fetchUser()
-    GApageView("Download Page")
+    ReactGA.pageview(window.location.pathname);
   }, [])
 
   var f = new FontFace(
@@ -138,10 +138,6 @@ const Preview = () => {
         url + pathname + '?application_refresh=' + Math.random() * 100000 + hash
       localStorage.setItem('executed', true)
     }
-  }
-
-  const GApageView = (page) => {   
-    ReactGA.pageview(page);
   }
 
   return (

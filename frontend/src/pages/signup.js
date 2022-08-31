@@ -14,7 +14,7 @@ const Signup = () => {
   const params = useParams();
 
   useEffect(() => {
-    GApageView("Sign up Page")
+    ReactGA.pageview(window.location.pathname);
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
@@ -22,10 +22,6 @@ const Signup = () => {
 
     fetchUser()
   }, [])
-
-  const GApageView = (page) => {   
-    ReactGA.pageview(page);
-  }
 
   localStorage.setItem('executed', false)
 

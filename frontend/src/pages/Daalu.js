@@ -11,13 +11,10 @@ import ReactGA from 'react-ga'
 const Daalu = () => {
 
   useEffect(() => {
-    GApageView("Daalu Page")
+    ReactGA.pageview(window.location.pathname);
     shootFireworks()
   },[])
 
-  const GApageView = (page) => {   
-    ReactGA.pageview(page);
-  }
 
 
   return (
