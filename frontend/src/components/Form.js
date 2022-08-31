@@ -1,57 +1,55 @@
 import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
-import {API_URL} from '../config/index'
+import { API_URL } from '../config/index'
 import Demo from './Demo'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const states = [
-  "Adamawa",
-  "Anambra",
-  "Abia",
-  "Akwa Ibom",
-  "Bayelsa",
-  "Bauchi",
-  "Benue",
-  "Borno",
-  "Cross River",
-  "Delta",
-  "Ebonyi",
-  "Enugu",
-  "Ekiti",
-  "Edo",
-  "Gombe",
-  "Imo",
-  "Jigawa",
-  "Kaduna",
-  "Kano",
-  "Katsina",
-  "Kebbi",
-  "Kogi",
-  "Kwara",
-  "Lagos",
-  "Nasarawa",
-  "Niger",
-  "Ogun",
-  "Ondo",
-  "Osun",
-  "Oyo",
-  "Plateau",
-  "Rivers",
-  "Sokoto",
-  "Taraba",
-  "Yobe",
-  "Zamfara",
+  'Adamawa',
+  'Anambra',
+  'Abia',
+  'Akwa Ibom',
+  'Bayelsa',
+  'Bauchi',
+  'Benue',
+  'Borno',
+  'Cross River',
+  'Delta',
+  'Ebonyi',
+  'Enugu',
+  'Ekiti',
+  'Edo',
+  'Gombe',
+  'Imo',
+  'Jigawa',
+  'Kaduna',
+  'Kano',
+  'Katsina',
+  'Kebbi',
+  'Kogi',
+  'Kwara',
+  'Lagos',
+  'Nasarawa',
+  'Niger',
+  'Ogun',
+  'Ondo',
+  'Osun',
+  'Oyo',
+  'Plateau',
+  'Rivers',
+  'Sokoto',
+  'Taraba',
+  'Yobe',
+  'Zamfara',
 ]
 
-const Form = ({id, data}) => {
-
+const Form = ({ id, data }) => {
   const [image, setImage] = useState()
   const [imagePath, setImagePath] = useState(null)
 
-  const navigate= useNavigate()
-
+  const navigate = useNavigate()
 
   const {
     register,
@@ -59,42 +57,56 @@ const Form = ({id, data}) => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      image: image
-    }
+      image: image,
+    },
   })
 
-  
   const handleUpload = async (data) => {
-    
     const { firstname, lastname, email, state, terms, phone } = data
 
-    localStorage.setItem("name", `${firstname}`)
+    localStorage.setItem('name', `${firstname}`)
 
-    try {
-      const res = await fetch(`${API_URL}/users/${id}/signup`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({firstname, lastname, email, state, terms, phone}),
-      })
-  
-      if(res.ok) {
-        const resData = await res.json()
-        navigate(`/pages/preview/${resData._id}`)
-      } else {
-        toast("Email has been used, Please change email")
+    if (image === undefined) {
+      toast('Please Upload Faceshot')
+    } else {
+      try {
+        const res = await fetch(`${API_URL}/users/${id}/signup`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            firstname,
+            lastname,
+            email,
+            state,
+            terms,
+            phone,
+          }),
+        })
+
+        if (res.ok) {
+          const resData = await res.json()
+          navigate(`/pages/preview/${resData._id}`)
+        } else {
+          toast('Email has been used, Please change email')
+        }
+      } catch (error) {
+        console.log('Wrong email')
       }
-    } catch(error){
-      console.log("Wrong email")
-    }  
+    }
   }
-
 
   return (
     <div className='formContainer signup-form'>
       <ToastContainer />
-      <Demo image={image} setImage={setImage} setImagePath={setImagePath} user={data} />
+      <Demo
+        image={image}
+        setImage={setImage}
+        setImagePath={setImagePath}
+        user={data}
+      />
+      
       <form onSubmit={handleSubmit(handleUpload)}>
         <div className='input-controller'>
           <input
@@ -116,7 +128,7 @@ const Form = ({id, data}) => {
 
         <div className='input-controller'>
           <select {...register('state', { required: true })}>
-            <option className="active">Choose State</option>
+            <option className='active'>Choose State</option>
             {states.map((state, index) => (
               <option key={index}>{state}</option>
             ))}
@@ -144,15 +156,19 @@ const Form = ({id, data}) => {
 
         <div className='check-controller'>
           <label htmlFor=''>
-            <input
-              type='checkbox'
-              {...register('terms', { required: true })}
-            />
-            <small className='terms'><a target="_blank" href="https://docs.google.com/document/d/1zp8e_632JsTS-cc8ucSIO7l0Etf-KBvh/edit?usp=sharing&ouid=100662321730297767116&rtpof=true&sd=true">I agree to the privacy policy</a></small>
+            <input type='checkbox' {...register('terms', { required: true })} />
+            <small className='terms'>
+              <a
+                target='_blank'
+                href='https://docs.google.com/document/d/1zp8e_632JsTS-cc8ucSIO7l0Etf-KBvh/edit?usp=sharing&ouid=100662321730297767116&rtpof=true&sd=true'
+              >
+                I agree to the privacy policy
+              </a>
+            </small>
           </label>
           {errors.terms && <span>Required input</span>}
         </div>
-        
+
         <div className='input-controller'>
           <button>Break Kola</button>
         </div>
@@ -161,15 +177,7 @@ const Form = ({id, data}) => {
       {
         //circular cropping canvas
       }
-      <canvas 
-        hidden
-        id={"upload"}
-        width={"500"} 
-        height={"500"}>
-
-
-      </canvas>
-      
+      <canvas hidden id={'upload'} width={'500'} height={'500'}></canvas>
     </div>
   )
 }
