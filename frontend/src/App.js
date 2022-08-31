@@ -24,7 +24,7 @@ function App() {
   }, []);
 
   const  initGA = () => {
-    const TRACKING_ID = "G-EE7W3CCH67";
+    const TRACKING_ID = "GT-M3L6ZQ";
     ReactGA.initialize(TRACKING_ID);  
     // ReactGA.pageview(window.location.pathname + window.location.search);
   }
