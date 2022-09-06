@@ -20,8 +20,11 @@ const Signup = () => {
       setLoading(false)
     }, 1000)
 
+    sessionStorage.removeItem("image")
+
     fetchUser()
   }, [])
+
 
   localStorage.setItem('executed', false)
 

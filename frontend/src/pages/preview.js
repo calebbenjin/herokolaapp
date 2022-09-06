@@ -10,7 +10,7 @@ import ReactGA from 'react-ga'
 
 const Preview = () => {
   const [loading, setLoading] = useState(false)
-  const [showReloadPage, setShowReloadPage] = useState(localStorage.getItem('executed') === 'false')
+  const [showReloadPage, setShowReloadPage] = useState(localStorage.getItem('executed'))
   const [userData, setUserData] = useState()
   const [lastuserData, setLastuserData] = useState()
   const [bgImage, setBgImage] = useState(null)
@@ -18,22 +18,9 @@ const Preview = () => {
   const ref = useRef(null)
   const [width, setWidth] = useState(0)
   const [height, setHeight] = useState(0)
-  const [mergeImg, setMergeImg] = useState({ src: '', err: '' })
   const params = useParams()
 
   const navigate = useNavigate()
-
-  // function refresh() {
-  //   var url = window.location.origin
-  //   var pathname = window.location.pathname
-  //   var hash = window.location.hash
-
-  //   if (localStorage.getItem('executed') === 'false') {
-  //     window.location =
-  //       url + pathname + '?application_refresh=' + Math.random() * 100000 + hash
-  //     localStorage.setItem('executed', true)
-  //   }
-  // }
 
   useEffect(() => {
     fetchUser()
@@ -111,7 +98,6 @@ const Preview = () => {
       const dataUsers = await res.json()
       setUserData(dataUsers && dataUsers)
 
-      console.log(dataUsers)
       if (res.ok) {
         setLoading(false)
       }
@@ -140,9 +126,11 @@ const Preview = () => {
     }
   }
 
+  console.log(showReloadPage)
+
   return (
     <React.Fragment>
-      {showReloadPage === true ? (
+      {showReloadPage === 'false' ? (
         <div className='reloadPage'>
           <div className='container'>
             <h2> ✨ Congratulation 👏</h2>
