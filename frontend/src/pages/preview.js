@@ -125,8 +125,9 @@ const Preview = () => {
     }
   }
 
+
   return (
-    <React.Fragment>
+    <>
       {showReloadPage === 'false' ? (
         <div className='reloadPage'>
           <div className='container'>
@@ -182,7 +183,7 @@ const Preview = () => {
           <Loader title='Breaking Kola...' />
         </div>
       )}
-    </React.Fragment>
+    </>
   )
 }
 
