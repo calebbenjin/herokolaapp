@@ -121,6 +121,7 @@ export const Demo = ({image, setImage, user, setImagePath}) => {
             />
           </div> : <div className='frameContainer'>
             <img src={frame} alt='frame' className='frameImg' />
+            <small className="clickBtn">Click here</small>
           </div>}
           
       </label>
