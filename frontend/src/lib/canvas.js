@@ -22,9 +22,9 @@ export const drawOnCanvas =  async (bgImage, heroImage) => {
 
     ctx.drawImage(bg, 0, 0, width, height);
 
-    ctx.drawImage(image, width * 0.10, height * 0.27, width * 0.35, height * 0.35);
+    ctx.drawImage(image, width * 0.10, height * 0.24, width * 0.35, height * 0.35);
 
-    ctx.drawImage(hero, width * 0.40, height * 0.27, width * 0.26 / heroAspectRatio, height * 0.5 *  heroAspectRatio);
+    ctx.drawImage(hero, width * 0.40, height * 0.23, width * 0.32 / heroAspectRatio, height * 0.5 *  heroAspectRatio);
 };
 
 

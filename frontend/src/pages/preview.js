@@ -52,13 +52,12 @@ const Preview = () => {
 
     ctx.fillText(
       name.toUpperCase(),
-      width * 0.3596 - (length * 12) / 2,
+      width * 0.3330 - (length * 12) / 2,
       height * 0.698
     )
   })
 
   useLayoutEffect(() => {
-    setLoading(true)
     setWidth(ref.current.offsetWidth)
     setHeight(ref.current.offsetHeight)
 
@@ -89,7 +88,6 @@ const Preview = () => {
   }
 
   const fetchUser = async () => {
-    setLoading(true)
     try {
       const res = await fetch(`${API_URL}/users/${params.id}`, {
         method: 'GET',
@@ -123,10 +121,9 @@ const Preview = () => {
       window.location =
         url + pathname + '?application_refresh=' + Math.random() * 100000 + hash
       localStorage.setItem('executed', true)
+      setLoading(true)
     }
   }
-
-  console.log(showReloadPage)
 
   return (
     <React.Fragment>
@@ -159,8 +156,8 @@ const Preview = () => {
                 <p>
                   Share on social media tagging @herolager and {userData?.name}{' '}
                   {userData?.instagram} on{' '}
-                  <AiOutlineInstagram className='icon' /> instagram or{' '}
-                  <AiFillTwitterCircle className='icon' /> twitter
+                  <AiOutlineInstagram className='icon' /> instagram or {userData?.twitter} {' '}
+                  <AiFillTwitterCircle className='icon' />  twitter
                 </p>
               </li>
               <li>

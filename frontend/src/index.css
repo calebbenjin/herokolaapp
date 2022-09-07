@@ -68,7 +68,48 @@ button {
 }
 
 .reloadPage {
-  display: none;
+  /* display: none; */
+}
+
+.reloadPage {
+  /* background: #ffdd00; */
+  background-image: url('../src/images/herobg.png');
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+.reloadPage button {
+  padding: 10px 30px;
+  font-size: 1rem;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 6px;
+  font-weight: 700;
+  background: var(--orangeColor);
+  margin-top: 2rem;
+  color: var(--greenColor);
+  color: rgb(15, 50, 20);
+}
+
+.reloadPage .container {
+  text-align: center;
+  line-height: 2.5;
+}
+
+.reloadPage .container h2, h3 {
+  color: var(--greenColor);
+  color: rgb(15, 50, 20);
 }
 
 .modalWrapper {
@@ -824,7 +865,46 @@ form {
     
   }
 
+  .reloadPage {
+    /* background: #ffdd00; */
+    background-image: url('../src/images/herobg.png');
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+  }
+
+  .reloadPage button {
+    padding: 10px 30px;
+    font-size: 1rem;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 6px;
+    font-weight: 700;
+    background: var(--orangeColor);
+    margin-top: 2rem;
+    color: var(--greenColor);
+    color: rgb(15, 50, 20);
+  }
+
+  .reloadPage .container {
+    text-align: center;
+    line-height: 2.5;
+  }
   
+  .reloadPage .container h2, h3 {
+    color: var(--greenColor);
+    color: rgb(15, 50, 20);
+  }
 
   .titleContainer {
     margin-top: -1rem;
