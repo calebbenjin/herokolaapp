@@ -43,9 +43,8 @@ const Signup = () => {
     
   }
 
-  if(loading) return <Loader title="Breaking Kola..." />
+  if (loading) return <Loader title="Breaking Kola..." />
   
-
   return (
     <main className="mobile-screen">
       <Header text="Upload your faceshot" />
