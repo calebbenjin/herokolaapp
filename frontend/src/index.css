@@ -1559,8 +1559,8 @@ form {
   .clickBtn {
     position: absolute;
     top: 50%;
-    left: 22%;
-    font-size: 0.5rem;
+    left: 21%;
+    font-size: 0.4rem;
     font-weight: 700;
     color: red;
     text-transform: uppercase;
