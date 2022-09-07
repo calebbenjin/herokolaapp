@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { API_URL } from '../config/index'
-import Demo from './Demo'
+import ImageUploader from './ImageUploader'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -46,8 +46,7 @@ const states = [
 ]
 
 const Form = ({ id, data }) => {
-  const [image, setImage] = useState()
-  const [imagePath, setImagePath] = useState(null)
+  const [imageUploaded, setImageUploaded] = useState(false)
 
   const navigate = useNavigate()
 
@@ -55,57 +54,50 @@ const Form = ({ id, data }) => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
-    defaultValues: {
-      image: image,
-    },
-  })
+  } = useForm()
 
   const handleUpload = async (data) => {
     const { firstname, lastname, email, state, terms, phone } = data
 
     localStorage.setItem('name', `${firstname}`)
 
-    if (image === undefined) {
+    if (!imageUploaded) {
       toast('Please Upload Faceshot')
-    } else {
-      try {
-        const res = await fetch(`${API_URL}/users/${id}/signup`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            firstname,
-            lastname,
-            email,
-            state,
-            terms,
-            phone,
-          }),
-        })
+      return;
+    }
 
-        if (res.ok) {
-          const resData = await res.json()
-          navigate(`/pages/preview/${resData._id}`)
-        } else {
-          toast('Email has been used, Please change email')
-        }
-      } catch (error) {
-        console.log('Wrong email')
+    try {
+      const res = await fetch(`${API_URL}/users/${id}/signup`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstname,
+          lastname,
+          email,
+          state,
+          terms,
+          phone,
+        }),
+      })
+
+      if (res.ok) {
+        const resData = await res.json()
+        navigate(`/pages/preview/${resData._id}`)
+      } else {
+        toast('Email has been used, Please change email')
       }
+    } catch (error) {
+      console.log('Wrong email')
     }
   }
 
   return (
     <div className='formContainer signup-form'>
       <ToastContainer />
-      <Demo
-        image={image}
-        setImage={setImage}
-        setImagePath={setImagePath}
-        user={data}
-      />
+
+      <ImageUploader setImageUploaded={setImageUploaded} notifyError={toast} />
       
       <form onSubmit={handleSubmit(handleUpload)}>
         <div className='input-controller'>

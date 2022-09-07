@@ -8,80 +8,64 @@ import { API_URL } from '../config'
 import frame from '../images/FACESHOT.png'
 import { loadCropImage } from '../lib/canvas'
 
-export const Demo = ({image, setImage, user, setImagePath}) => {
-  const [userImage, setUserImage] = useState()
-  const [cropData, setCropData] = useState()
+export const ImageUploader = ({setImageUploaded, notifyError}) => {
   const [cropper, setCropper] = useState()
-  const [showModal, setShowModal] = useState(false)
-  const [imageFile, setImageFile] = useState(null)
+  const [showCropModal, toggleShowCropModal] = useState(false)
+  const [selectedImage, setSelectedImage] = useState()
+  const [croppedImage, setCroppedImage] = useState()
 
-  useEffect(() => {
-    fetchUser()
-  })
-
-  const fetchUser = () => {
-    user?.users?.map((rank, i, row) => {
-      if (i + 1 === row.length) {
-        setUserImage(rank)
-      } else {
-        // Not last one.
-      }
-    })
-  }
-
-
+  // uploadImage doesn't really upload the image to a server,
+  // because we don't really need to. sessionStorage is just fine.
   const uploadImage = async (cropData) => {
-    sessionStorage.setItem("image", cropData)
+    try {
+      sessionStorage.setItem("image", cropData)
+      setImageUploaded(true)
+    } catch (e) {
+      // TODO: Best to try to reduce the image size first to try to
+      // prevent this error.
+      notifyError('Image size too big. Try selecting a different image.')
+      setCroppedImage(null)
+      setImageUploaded(false)
+    }
   }
   
   const handleChange = async (e) => {
-    
     e.preventDefault()
-      let files
-      if (e.dataTransfer) {
-        files = e.dataTransfer.files
-      } else if (e.target) {
-        files = e.target.files
-      }
-      const reader = new FileReader()
-      reader.onload = () => {
-        setImage(reader.result)
-        
-        setShowModal(true)
-      }
-      reader.readAsDataURL(files[0])
-
+    let files = []
+    if (e.dataTransfer) {
+      files = e.dataTransfer.files
+    } else if (e.target) {
+      files = e.target.files
+    }
+    if (files.length == 0) {
+      notifyError('No image selected')
+      return;
+    }
+    const reader = new FileReader()
+    reader.onload = () => {
+      setSelectedImage(reader.result)
+      toggleShowCropModal(true)
+      e.target.value = '' // to enable re-selecting this file
+    }
+    reader.readAsDataURL(files[0])
   }
 
   const getCropData = () => {
     if (typeof cropper !== 'undefined') {
       const crop = cropper.getCroppedCanvas().toDataURL("image/png", 1.0)
-      setCropData(crop)
+      setCroppedImage(crop)
       uploadImage(crop)
-      setShowModal(false)
+      toggleShowCropModal(false)
     }
-  }
-
-  const handleUpload = async (url) => {
-    /**
-     * You can also use this async method in place of dataUrlToFile(url) method.
-     * const file = await dataUrlToFileUsingFetch(url, 'output.png', 'image/png')
-     */
-
-    const file = dataUrlToFile(url, 'output.png')
-
-    console.log(
-      `We have File "${file.name}", now we can upload it wherever we want!`
-    )
   }
 
   return (
     <>
-      <Modal showModal={showModal} onModalClose={() => setShowModal(false)}>
+      <Modal showModal={showCropModal} onModalClose={() => toggleShowCropModal(false)}>
         <Cropper
           style={{ height: 400}}
           initialAspectRatio={16 / 9}
-          src={image}
+          src={selectedImage}
           viewMode={1}
           minCropBoxHeight={10}
           minCropBoxWidth={10}
@@ -97,7 +81,7 @@ export const Demo = ({image, setImage, user, setImagePath}) => {
         />
 
         <footer className='modalFooter'>
-          <button className='dimissBtn' onClick={() => setShowModal(false)}>
+          <button className='dimissBtn' onClick={() => toggleShowCropModal(false)}>
             Dismiss
           </button>
           <button className='saveBtn' onClick={getCropData}>
@@ -111,11 +95,10 @@ export const Demo = ({image, setImage, user, setImagePath}) => {
           className='imageuploader'
         >
        <label htmlFor='upload-button' className='upload-button'>
-          <input type='file' id='upload-button'
-        style={{ display: 'none' }}  onChange={handleChange} />
-          {cropData ? <div className='previewContainer'>
+          <input type='file' id='upload-button' style={{ display: 'none' }} onChange={handleChange} />
+          {croppedImage ? <div className='previewContainer'>
             <img
-              src={cropData}
+              src={croppedImage}
               alt='frame'
               className='previewImg'
             />
@@ -130,6 +113,6 @@ export const Demo = ({image, setImage, user, setImagePath}) => {
   )
 }
 
-export default Demo
+export default ImageUploader
 
 
