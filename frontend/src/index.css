@@ -1556,6 +1556,18 @@ form {
     }
   }
 
+  .clickBtn {
+    position: absolute;
+    top: 50%;
+    left: 22%;
+    font-size: 0.5rem;
+    font-weight: 700;
+    color: red;
+    text-transform: uppercase;
+    background: #fff;
+    padding: 2px;
+  }
+
 
   .headimg-box p {
     margin: 0;
