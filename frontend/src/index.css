@@ -879,7 +879,20 @@ form {
     width: 20%; 
     
   }
+  
+  .clickBtn {
+    position: absolute;
+    top: 50%;
+    left: 21%;
+    font-size: 0.5rem;
+    font-weight: 700;
+    color: red;
+    text-transform: uppercase;
+    background: #fff;
+    padding: 2px;
+  }
 
+  
   .reloadPage {
     /* background: #ffdd00; */
     background-image: url('../src/images/herobg.png');
@@ -1393,7 +1406,7 @@ form {
   .clickBtn {
     position: absolute;
     top: 50%;
-    left: 22%;
+    left: 21%;
     font-size: 0.5rem;
     font-weight: 700;
     color: red;
