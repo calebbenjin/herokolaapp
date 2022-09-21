@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import {API_URL} from '../../config/index'
+import { API_URL } from '../../config/index'
+import { Link } from 'react-router-dom'
 
 const Dashboard = () => {
   const [user, setUser] = useState()
-
+  const [showAll, setShowAll] = useState(false)
 
   useEffect(() => {
     fetchUser()
-  },[])
+  }, [])
 
   const fetchUser = async () => {
-
     try {
       const config = {
         headers: {
@@ -20,45 +20,49 @@ const Dashboard = () => {
       }
       const { data } = await axios.get(`${API_URL}/users`, config)
 
-      
       setUser(data)
     } catch (error) {
       console.error(error)
     }
   }
 
-  console.log(user?.map(items => items?.users[0]))
+  const handleShow = (id) => {
+    const userID = user?.map((hero) => hero.users)
+    // for (let i = 0; i < userID.length; i++) {
+    //   const users = userID[i]
+    //   for (let i = 0; i < users.length; i++) {
+
+    //     console.log(users[i]?._id)
+    //     if(id) {
+    //       setShowAll(!showAll)
+    //     }
+    //   }
+    // }
+  }
+
+  // console.log(user?.map((items) => items._id))
 
   return (
-    <div className="table-container">
-      <div className="table">
-        <table>
-          <thead>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>State</th>
-              <th>Terms and Condition</th>
-          </thead>
-          <tbody>
-            {/* {user?.map(item => (
-              <tr>
-                  <td>{item[0]?.firstname}</td>
-                  <td>{item[0]?.lastname}</td>
-                  <td>{item[0]?.email}</td>
-                  <td>{item[0]?.phone}</td>
-                  <td>{item[0]?.state}</td>
-                  <td>{item[0]?.term}</td>
-              </tr>
-            ))}   */}
-              
-          </tbody>
-          <tfooter>
-          </tfooter>
-        </table>
+    <div className='table-container'>
+      <div className='mainContainer'>
+        <h1>Dashboard</h1>
+        <div className='flexContainer'>
+          {user?.map((hero) => (
+            <div className='breadcrumb' key={hero._id}>
+              <div className='card'>
+                <h4>{hero.name}</h4>
+                <h5>{hero.users.length} Customers</h5>
+                
+              </div>
+              <Link to={`/admin/${hero?._id}`}>
+                <button>
+                  {showAll ? 'Show less' : 'See all customers'}
+                </button>
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
-      <h1>Dashboard</h1>
     </div>
   )
 }
